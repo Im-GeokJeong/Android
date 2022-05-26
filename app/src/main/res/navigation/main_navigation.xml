@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/navigation_rental_shop">
+
+    <fragment
+        android:id="@+id/navigation_add_post"
+        android:name="com.example.im_geokjeong.PostFragment"
+        android:label="PostFragment" />
+    <fragment
+        android:id="@+id/navigation_rental_shop"
+        android:name="com.example.im_geokjeong.RentalShopFragment"
+        android:label="RentalShopFragment" />
+    <fragment
+        android:id="@+id/navigation_rental_person"
+        android:name="com.example.im_geokjeong.RentalPersonFragment"
+        android:label="RentalPersonFragment" />
+</navigation>

@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -15,25 +17,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.navigation_main)
         bottomNavigationView.itemIconTintList = null
-
+        val navController = supportFragmentManager.findFragmentById(R.id.container_main)?.findNavController()
+        navController?.let{
+            bottomNavigationView.setupWithNavController(it)
+        }
     }
 
-    /*private fun onSlideUpDialog() {
-        var contentView: View =
-            (getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater).inflate(
-                R.layout.popup_slideup,
-                null
-            )
-        val slideupPopup = SlideUpDialog.Builder(this)
-            .setContentView(contentView)
-            .create()
 
-        slideupPopup.setOnCancelListener{
-            Log.d("DIALOG", "close")
-        }
-        contentView.findViewById<TextView>(R.id.btn_popup_detail).setOnClickListener {
-            startActivity(Intent(this@MainActivity, MapDetailActivity::class.java))
-        }
-        slideupPopup.show()
-    }*/
 }
