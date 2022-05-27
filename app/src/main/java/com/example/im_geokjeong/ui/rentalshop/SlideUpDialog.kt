@@ -1,4 +1,4 @@
-package com.example.im_geokjeong
+package com.example.im_geokjeong.ui.rentalshop
 
 import android.animation.Animator
 import android.animation.AnimatorSet
@@ -13,6 +13,7 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import androidx.cardview.widget.CardView
+import com.example.im_geokjeong.R
 
 open class SlideUpDialog(context: Context, builder: Builder) : Dialog(
     context, android.R.style.Theme_DeviceDefault_NoActionBar_TranslucentDecor

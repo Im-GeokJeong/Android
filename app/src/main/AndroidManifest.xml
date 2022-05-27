@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MapDetailActivity"/>
+        <activity android:name=".ui.rentalshopdetail.RentalShopDetailActivity"/>
     </application>
 
 </manifest>

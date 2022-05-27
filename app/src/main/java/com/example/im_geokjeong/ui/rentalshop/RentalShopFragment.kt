@@ -1,15 +1,17 @@
-package com.example.im_geokjeong
+package com.example.im_geokjeong.ui.rentalshop
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.im_geokjeong.R
 
-class RentalShopFragment: Fragment() {
+class RentalShopFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,8 +42,18 @@ class RentalShopFragment: Fragment() {
             Log.d("DIALOG", "close")
         }*/
         contentView.findViewById<TextView>(R.id.btn_popup_detail).setOnClickListener {
-            startActivity(Intent(requireActivity(), MapDetailActivity::class.java))
+            val shopName = contentView.findViewById<TextView>(R.id.tv_popup_rental_name)
+            openRentalShopDetail(shopName.toString())
+            slideupPopup.dismissAnim()
         }
         slideupPopup.show()
+    }
+
+    private fun openRentalShopDetail(rentalShopId: String) {
+        findNavController().navigate(
+            R.id.action_rental_shop_to_rental_shop_detail, bundleOf(
+                "rental_shop_id" to rentalShopId
+            )
+        )
     }
 }

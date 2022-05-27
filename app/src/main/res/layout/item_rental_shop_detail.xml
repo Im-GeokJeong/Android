@@ -16,10 +16,10 @@
 
     <TextView
         android:id="@+id/tv_map_detail_machine_name"
+        style="@style/TextMedium16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        style="@style/TextMedium16"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_map_detail"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,12 +27,12 @@
         tools:textSize="18sp" />
 
     <TextView
+        style="@style/TextMedium16"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        style="@style/TextMedium16"
         app:layout_constraintStart_toStartOf="@+id/tv_map_detail_machine_name"
         app:layout_constraintTop_toBottomOf="@+id/tv_map_detail_machine_name"
         tools:text="3"
-        tools:textSize="18sp"/>
+        tools:textSize="18sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

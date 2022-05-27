@@ -1,17 +1,19 @@
-package com.example.im_geokjeong
+package com.example.im_geokjeong.ui.rentalshopdetail
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.im_geokjeong.R
 
-class RentalPersonFragment: Fragment() {
+class RentalShopDetailFragment: Fragment() {
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_rental_person, container, false)
+        return inflater.inflate(R.layout.fragment_rental_shop_detail, container, false)
     }
 }

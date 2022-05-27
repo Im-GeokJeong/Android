@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
     app:startDestination="@id/navigation_rental_shop">
 
     <fragment
         android:id="@+id/navigation_add_post"
         android:name="com.example.im_geokjeong.PostFragment"
-        android:label="PostFragment" />
+        android:label="PostFragment"
+        tools:layout="@layout/fragment_post" />
     <fragment
         android:id="@+id/navigation_rental_shop"
-        android:name="com.example.im_geokjeong.RentalShopFragment"
-        android:label="RentalShopFragment" />
+        android:name="com.example.im_geokjeong.ui.rentalshop.RentalShopFragment"
+        android:label="RentalShopFragment"
+        tools:layout="@layout/fragment_rental_shop">
+        <action
+            android:id="@+id/action_rental_shop_to_rental_shop_detail"
+            app:destination="@id/navigation_rental_shop_detail" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_rental_person"
-        android:name="com.example.im_geokjeong.RentalPersonFragment"
-        android:label="RentalPersonFragment" />
+        android:name="com.example.im_geokjeong.ui.rentalperson.RentalPersonFragment"
+        android:label="RentalPersonFragment"
+        tools:layout="@layout/fragment_rental_person" />
+    <fragment
+        android:id="@+id/navigation_rental_shop_detail"
+        android:name="com.example.im_geokjeong.ui.rentalshopdetail.RentalShopDetailFragment"
+        android:label="RentalShopDetailFragment"
+        tools:layout="@layout/fragment_rental_shop_detail" />
 </navigation>
