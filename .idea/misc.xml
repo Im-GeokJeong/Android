@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/ic_gnb_back.xml" value="0.196" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.196" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/search_edge.xml" value="0.196" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/selector_add_post_icon.xml" value="0.196" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/activity_private_rental_post.xml" value="0.2" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_post.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_rental_person.xml" value="0.264" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_rental_shop.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_rental_shop_detail.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/ic_gnb_back.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/item_private_rental.xml" value="0.264" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/item_rental_shop_detail.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/popup_slideup.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/slide_up_dialog_base.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_map.xml" value="0.33" />
         <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/popup_slideup.xml" value="0.33" />
