@@ -18,7 +18,7 @@
         android:theme="@style/Theme.ImGeokJeong">
 
         <!-- 네이티브 앱 키 추가 -->
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="59517006083b9ec2a3081d67bd57e167"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="********************"/>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
