@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.im_geokjeong">
+    package="com.im_geokjeong">
+
+    <!-- 인터넷, 위치 권한 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
+        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ImGeokJeong">
+
+        <!-- 네이티브 앱 키 추가 -->
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="********************"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,5 +30,4 @@
         </activity>
         <activity android:name=".ui.rentalshopdetail.RentalShopDetailActivity"/>
     </application>
-
 </manifest>
