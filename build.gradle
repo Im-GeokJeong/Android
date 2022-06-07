@@ -6,6 +6,7 @@ plugins {
 }
 ext {
     navVersion = '2.3.5'
+    retrofitVersion = '2.9.0'
 }
 task clean(type: Delete) {
     delete rootProject.buildDir
