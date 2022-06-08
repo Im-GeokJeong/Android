@@ -18,7 +18,7 @@
         android:theme="@style/Theme.ImGeokJeong">
 
         <!-- 네이티브 앱 키 추가 -->
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="********************"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="${kakaoApiKey}"/>
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">
@@ -28,6 +28,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.rentalshopdetail.RentalShopDetailActivity"/>
     </application>
 </manifest>
