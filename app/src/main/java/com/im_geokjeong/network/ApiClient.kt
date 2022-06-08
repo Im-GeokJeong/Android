@@ -1,5 +1,6 @@
 package com.im_geokjeong.network
 
+import com.im_geokjeong.BuildConfig.BASE_URL
 import com.im_geokjeong.model.OfficeResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,7 +14,7 @@ interface ApiClient {
 
     companion object{
 
-        private const val baseUrl = "http://choco-one.iptime.org:11104/api/"
+        private const val baseUrl = BASE_URL
 
         fun create(): ApiClient{
             val logger = HttpLoggingInterceptor().apply{

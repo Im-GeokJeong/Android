@@ -1,7 +1,12 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android-extensions'
 }
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def kakao_api_key = properties.getProperty('kakao_api_key')
 
 android {
     compileSdk 32
@@ -12,6 +17,8 @@ android {
         targetSdk 32
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [kakaoApiKey: kakao_api_key]
+        buildConfigField "String", "BASE_URL", properties["base_url"]
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
