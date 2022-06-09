@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/navigation_rental_shop">
+    app:startDestination="@id/navigation_office">
 
     <fragment
         android:id="@+id/navigation_add_post"
@@ -11,13 +11,13 @@
         android:label="PostFragment"
         tools:layout="@layout/fragment_post" />
     <fragment
-        android:id="@+id/navigation_rental_shop"
-        android:name="com.im_geokjeong.ui.rentalshop.RentalShopFragment"
+        android:id="@+id/navigation_office"
+        android:name="com.im_geokjeong.ui.rentaloffice.RentalOfficeFragment"
         android:label="RentalShopFragment"
-        tools:layout="@layout/fragment_rental_shop">
+        tools:layout="@layout/fragment_rental_office">
         <action
-            android:id="@+id/action_rental_shop_to_rental_shop_detail"
-            app:destination="@id/navigation_rental_shop_detail" />
+            android:id="@+id/action_office_to_office_detail"
+            app:destination="@id/navigation_office_detail" />
     </fragment>
     <fragment
         android:id="@+id/navigation_rental_person"
@@ -25,8 +25,8 @@
         android:label="RentalPersonFragment"
         tools:layout="@layout/fragment_rental_person" />
     <fragment
-        android:id="@+id/navigation_rental_shop_detail"
-        android:name="com.im_geokjeong.ui.rentalshopdetail.RentalShopDetailFragment"
+        android:id="@+id/navigation_office_detail"
+        android:name="com.im_geokjeong.ui.rentalofficedetail.RentalOfficeDetailFragment"
         android:label="RentalShopDetailFragment"
-        tools:layout="@layout/fragment_rental_shop_detail" />
+        tools:layout="@layout/fragment_rental_office_detail" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.im_geokjeong.ui.rentalshop
+package com.im_geokjeong.ui.rentaloffice
 
 import android.animation.Animator
 import android.animation.AnimatorSet
