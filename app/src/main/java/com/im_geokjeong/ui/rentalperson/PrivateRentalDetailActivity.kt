@@ -1,8 +1,8 @@
-package com.im_geokjeong.ui.ui.rentalperson
+package com.im_geokjeong.ui.rentalperson
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.im_geokjeong.R
+import com.im_geokjeong.R
 
 class PrivateRentalDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
