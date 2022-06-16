@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.im_geokjeong.R
 import com.im_geokjeong.common.KEY_OFFICE_ID
 import com.im_geokjeong.common.KEY_OFFICE_NAME
 import com.im_geokjeong.databinding.FragmentRentalOfficeDetailBinding
