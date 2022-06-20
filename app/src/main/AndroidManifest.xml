@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.im_geokjeong">
 
     <!-- 인터넷, 위치 권한 -->
@@ -21,11 +20,8 @@
         <!-- 네이티브 앱 키 추가 -->
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="${kakaoApiKey}"/>
         <activity
-            android:name=".ui.rentalperson.PrivateRentalDetailActivity"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
             android:name=".ui.MainActivity"
+            android:windowSoftInputMode="adjustPan"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
