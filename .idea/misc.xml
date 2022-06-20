@@ -1,58 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DesignSurface">
-    <option name="filePathToZoomLevelMap">
-      <map>
-        <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_map.xml" value="0.33" />
-        <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/popup_slideup.xml" value="0.33" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/color_icon.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/edge_popup.xml" value="0.2175" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_call_black_24dp.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_edit_black_24dp.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_edit_filled_black_24dp.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_home_filled_black_24dp.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_link_black_24dp.xml" value="0.149" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_location_on_black_24dp.xml" value="0.119" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_person_black_24dp.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_person_filled_black_24dp.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/search_location_btn.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_add_post_icon.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_personal_shop_icon.xml" value="0.1865" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_rental_person_icon.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_rental_shop_icon.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/activity_map_detail.xml" value="0.264" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_map_detail.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_office_detail.xml" value="0.18" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_post.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_office.xml" value="0.33064516129032256" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_office_detail.xml" value="0.264" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_person.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_shop.xml" value="0.2" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_shop_detail.xml" value="0.2" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_balloon.xml" value="0.4" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_map_detail.xml" value="0.264" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_office_detail.xml" value="0.21296296296296297" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_rental.xml" value="0.264" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_rental_office_detail.xml" value="0.25" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/popup_slideup.xml" value="0.1111111111111111" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/slide_up_dialog_base.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/menu/navigation_main_menu.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.113" />
-        <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/activity_map_detail.xml" value="0.1" />
-        <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/popup_slideup.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/slide_up_dialog_base.xml" value="0.1" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+    <component name="DesignSurface">
+        <option name="filePathToZoomLevelMap">
+            <map>
+                <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_main.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_map.xml" value="0.33" />
+                <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/popup_slideup.xml" value="0.33" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/color_icon.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/edge_popup.xml" value="0.2175" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_call_black_24dp.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_edit_black_24dp.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_edit_filled_black_24dp.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_home_filled_black_24dp.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_link_black_24dp.xml" value="0.149" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_location_on_black_24dp.xml" value="0.119" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_person_black_24dp.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/ic_person_filled_black_24dp.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/search_location_btn.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_add_post_icon.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_personal_shop_icon.xml" value="0.1865" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_rental_person_icon.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_rental_shop_icon.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/activity_main.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/activity_map_detail.xml" value="0.264" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_map_detail.xml" value="0.36614583333333334" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_office_detail.xml" value="0.18" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_post.xml" value="0.36614583333333334" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_office.xml" value="0.33064516129032256" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_office_detail.xml" value="0.264" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_person.xml" value="0.36614583333333334" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_shop.xml" value="0.2" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_shop_detail.xml" value="0.2" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_balloon.xml" value="0.4" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_map_detail.xml" value="0.264" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_office_detail.xml" value="0.21296296296296297" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_rental.xml" value="0.264" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/item_rental_office_detail.xml" value="0.25" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/popup_slideup.xml" value="0.1111111111111111" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/slide_up_dialog_base.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/menu/navigation_main_menu.xml" value="0.25364583333333335" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.113" />
+                <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
+                <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/activity_map_detail.xml" value="0.1" />
+                <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/popup_slideup.xml" value="0.25364583333333335" />
+                <entry key="..\:/Users/unme9/Desktop/ImGeokJeong/app/src/main/res/layout/slide_up_dialog_base.xml" value="0.1" />
+            </map>
+        </option>
+    </component>
+    <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+        <output url="file://$PROJECT_DIR$/build/classes" />
+    </component>
+    <component name="ProjectType">
+        <option name="id" value="Android" />
+    </component>
 </project>

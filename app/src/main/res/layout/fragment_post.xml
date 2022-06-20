@@ -1,15 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/postTitle"
+        android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:text="글 작성"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/postToolbar"
+        android:text="제목"
+        />
+     <EditText
+         android:id="@+id/postEditTitle"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:textSize="15sp"
+         android:hint="제목 입력"
+         android:layout_marginEnd="15dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintBottom_toBottomOf="@+id/postTitle"
+         app:layout_constraintTop_toTopOf="@+id/postTitle"
+         app:layout_constraintStart_toEndOf="@+id/postTitle" />
+    <TextView
+        android:id="@+id/postProof"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/postTitle"
+        app:layout_constraintTop_toBottomOf="@id/postTitle"
+        android:text="자격여부"
+        />
+    <EditText
+        android:id="@+id/postEditProof"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:hint="선택해주세요"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/postProof"
+        app:layout_constraintTop_toTopOf="@+id/postProof"
+        app:layout_constraintStart_toEndOf="@+id/postProof" />
+    <TextView
+        android:id="@+id/postArea"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/postProof"
+        app:layout_constraintTop_toBottomOf="@id/postProof"
+        android:text="지역"
+        />
+    <EditText
+        android:id="@+id/postEditArea"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:hint="선택해주세요"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/postArea"
+        app:layout_constraintTop_toTopOf="@+id/postArea"
+        app:layout_constraintStart_toEndOf="@+id/postArea" />
+    <TextView
+        android:id="@+id/postAddress"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/postArea"
+        app:layout_constraintTop_toBottomOf="@id/postArea"
+        android:text="장소"
+        />
+    <EditText
+        android:id="@+id/postEditAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:hint="선택해주세요"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/postAddress"
+        app:layout_constraintTop_toTopOf="@+id/postAddress"
+        app:layout_constraintStart_toEndOf="@+id/postAddress" />
+    <TextView
+        android:id="@+id/postPrice"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/postAddress"
+        app:layout_constraintTop_toBottomOf="@id/postAddress"
+        android:text="가격"
+        />
+    <EditText
+        android:id="@+id/postEditPrice"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:hint="선택해주세요"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/postPrice"
+        app:layout_constraintTop_toTopOf="@+id/postPrice"
+        app:layout_constraintStart_toEndOf="@+id/postPrice" />
+
+    <TextView
+        android:id="@+id/postContent"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/postPrice"
+        app:layout_constraintTop_toBottomOf="@id/postPrice"
+        android:text="작업내용"
+        />
+    <EditText
+        android:id="@+id/postEditContent"
+        android:gravity="start"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:hint="내용 입력"
+        android:textSize="15sp"
+        android:layout_width="match_parent"
+        android:background="@drawable/content_box"
+        app:layout_constraintTop_toBottomOf="@id/postContent"
+        app:layout_constraintBottom_toTopOf="@id/postComplete"
+
+        android:layout_height="0dp"/>
+
+    <Button
+        android:id="@+id/postComplete"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:text="등록"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/postToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:navigationIcon="@drawable/ic_gnb_back"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:title="글 등록" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

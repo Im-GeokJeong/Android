@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Im-GeokJeong</string>
+    <string name="kr_app_name">임꺽정</string>
     <string name="mapDetail">상세보기</string>
     <string name="label_rental_shop">사업소 임대</string>
     <string name="label_personal_shop">개인 임대</string>
     <string name="label_add_post">임대글 작성</string>
+    <string name="private_rental_search_hint">검색어 입력</string>
+    <string name="private_rental_image_description">개인 임대 이미지</string>
+
+
 </resources>
