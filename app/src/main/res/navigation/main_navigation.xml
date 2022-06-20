@@ -23,7 +23,16 @@
         android:id="@+id/navigation_rental_person"
         android:name="com.im_geokjeong.ui.rentalperson.RentalPersonFragment"
         android:label="RentalPersonFragment"
-        tools:layout="@layout/fragment_rental_person" />
+        tools:layout="@layout/fragment_rental_person" >
+        <action
+            android:id="@+id/action_navigation_rental_person_to_navigation_rental_person_detail"
+            app:destination="@id/navigation_rental_person_detail" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_rental_person_detail"
+        android:name="com.im_geokjeong.ui.rentalpersondetail.RentalPersonDetailFragment"
+        android:label="RentalPersonDetailFragment"
+        tools:layout="@layout/fragment_rental_person_detail"/>
     <fragment
         android:id="@+id/navigation_office_detail"
         android:name="com.im_geokjeong.ui.officedetail.OfficeDetailFragment"

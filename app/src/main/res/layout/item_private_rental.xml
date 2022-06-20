@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
         <variable
             name="person"
             type="com.im_geokjeong.model.Person" />
+        <variable
+            name="viewModel"
+            type="com.im_geokjeong.ui.rentalperson.RentalPersonViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> viewModel.openPersonDetail(person)}">
 
         <ImageView
             android:id="@+id/privateRentalListImage"
@@ -27,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="제목 제목 제목"
+            tools:text="제목 제목 제목"
+            android:text="@{person.title}"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/privateRentalListAddress"
@@ -39,7 +45,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="포항시 북구"
+            android:text="@{person.region}"
             app:layout_constraintStart_toStartOf="@id/privateRentalListTitle"
             app:layout_constraintTop_toBottomOf="@+id/privateRentalListTitle" />
 

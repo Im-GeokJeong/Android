@@ -2,9 +2,6 @@ package com.im_geokjeong.network
 
 import com.im_geokjeong.BuildConfig.BASE_URL
 import com.im_geokjeong.model.*
-import com.im_geokjeong.model.Office
-import com.im_geokjeong.model.OfficeDetailResponse
-import com.im_geokjeong.model.OfficeResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -21,13 +18,16 @@ interface ApiClient {
     @GET("post/all")
     suspend fun getArticle(): PersonResponse
 
+    @GET("post/{postId}")
+    suspend fun getArticleDetail(@Path("postId") postId: Int): PersonDetailResponse
+
     @POST("post")
     suspend fun postArticle(@Body person: PostPerson): PostResponse
 
     @GET("office/{officeId}")
     suspend fun getOfficeDetail(@Path("officeId") officeId: Int): OfficeDetailResponse
 
-    companion object{
+    companion object {
         private const val baseUrl = BASE_URL
 
         fun create(): ApiClient {
