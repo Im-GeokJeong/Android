@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_post" />
     <fragment
         android:id="@+id/navigation_office"
-        android:name="com.im_geokjeong.ui.rentaloffice.RentalOfficeFragment"
+        android:name="com.im_geokjeong.ui.office.OfficeFragment"
         android:label="RentalShopFragment"
-        tools:layout="@layout/fragment_rental_office">
+        tools:layout="@layout/fragment_office">
         <action
             android:id="@+id/action_office_to_office_detail"
             app:destination="@id/navigation_office_detail" />
@@ -26,7 +26,7 @@
         tools:layout="@layout/fragment_rental_person" />
     <fragment
         android:id="@+id/navigation_office_detail"
-        android:name="com.im_geokjeong.ui.rentalofficedetail.RentalOfficeDetailFragment"
+        android:name="com.im_geokjeong.ui.officedetail.OfficeDetailFragment"
         android:label="RentalShopDetailFragment"
-        tools:layout="@layout/fragment_rental_office_detail" />
+        tools:layout="@layout/fragment_office_detail" />
 </navigation>

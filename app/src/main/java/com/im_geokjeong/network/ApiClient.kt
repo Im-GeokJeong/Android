@@ -2,6 +2,9 @@ package com.im_geokjeong.network
 
 import com.im_geokjeong.BuildConfig.BASE_URL
 import com.im_geokjeong.model.*
+import com.im_geokjeong.model.Office
+import com.im_geokjeong.model.OfficeDetailResponse
+import com.im_geokjeong.model.OfficeResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -9,6 +12,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface ApiClient {
     @GET("office/list")
@@ -20,8 +24,10 @@ interface ApiClient {
     @POST("post")
     suspend fun postArticle(@Body person: PostPerson): PostResponse
 
-    companion object {
+    @GET("office/{officeId}")
+    suspend fun getOfficeDetail(@Path("officeId") officeId: Int): OfficeDetailResponse
 
+    companion object{
         private const val baseUrl = BASE_URL
 
         fun create(): ApiClient {

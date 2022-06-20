@@ -4,20 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="office"
-            type="com.im_geokjeong.model.Office" />
+            name="machine"
+            type="com.im_geokjeong.model.Machine" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/iv_map_detail"
+            imageUrl="@{machine.picture}"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
             android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:background="@drawable/goolsakgi" />
@@ -28,6 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:text="@{machine.name}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_map_detail"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,13 +40,25 @@
             tools:textSize="18sp" />
 
         <TextView
+            android:id="@+id/tv_map_detail_machine_count"
             style="@style/TextMedium16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
+            android:text="@{String.valueOf(machine.count)}"
             app:layout_constraintStart_toStartOf="@+id/tv_map_detail_machine_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_map_detail_machine_name"
             tools:text="3"
+            tools:textSize="18sp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="6dp"
+            android:text="대 보유중"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_map_detail_machine_count"
+            app:layout_constraintStart_toEndOf="@+id/tv_map_detail_machine_count"
             tools:textSize="18sp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
