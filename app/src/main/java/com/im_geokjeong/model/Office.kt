@@ -6,6 +6,7 @@ data class Office(
     val phoneNumber: String,
     val streetNameAddress: String,
     val lotNumberAddress: String,
-    val latitude: String,
-    val longitude: String
+    val latitude: String?,
+    val longitude: String?,
+    val machines: List<Machine>?
 )
