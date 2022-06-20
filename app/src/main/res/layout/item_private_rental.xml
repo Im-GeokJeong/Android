@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/privateRentalListImage"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/goolsakgi"
-        app:layout_constraintEnd_toStartOf="@+id/privateRentalListTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/private_rental_image_description" />
+    <data>
+        <variable
+            name="person"
+            type="com.im_geokjeong.model.Person" />
+    </data>
 
-    <TextView
-        android:id="@+id/privateRentalListTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:text="제목 제목 제목"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/privateRentalListAddress"
-        app:layout_constraintStart_toEndOf="@id/privateRentalListImage"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/privateRentalListAddress"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="포항시 북구"
-        app:layout_constraintStart_toStartOf="@id/privateRentalListTitle"
-        app:layout_constraintTop_toBottomOf="@+id/privateRentalListTitle" />
+        <ImageView
+            android:id="@+id/privateRentalListImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/goolsakgi"
+            app:layout_constraintEnd_toStartOf="@+id/privateRentalListTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="@string/private_rental_image_description" />
 
-    <TextView
-        android:id="@+id/privateRentalListTime"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="1분전"
-        app:layout_constraintBottom_toBottomOf="@id/privateRentalListTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/privateRentalListTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="제목 제목 제목"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/privateRentalListAddress"
+            app:layout_constraintStart_toEndOf="@id/privateRentalListImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/privateRentalListAddress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="포항시 북구"
+            app:layout_constraintStart_toStartOf="@id/privateRentalListTitle"
+            app:layout_constraintTop_toBottomOf="@+id/privateRentalListTitle" />
+
+        <TextView
+            android:id="@+id/privateRentalListTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="1분전"
+            app:layout_constraintBottom_toBottomOf="@id/privateRentalListTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

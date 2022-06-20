@@ -38,7 +38,7 @@
         app:layout_constraintTop_toBottomOf="@id/postTitle"
         android:text="자격여부"
         />
-    <EditText
+    <TextView
         android:id="@+id/postEditProof"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -64,7 +64,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:hint="선택해주세요"
+        android:hint="포항시"
         android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/postArea"
@@ -78,14 +78,14 @@
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="@id/postArea"
         app:layout_constraintTop_toBottomOf="@id/postArea"
-        android:text="장소"
+        android:text="전화번호"
         />
     <EditText
-        android:id="@+id/postEditAddress"
+        android:id="@+id/postEditPhone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:hint="선택해주세요"
+        android:hint="010-0000-0000"
         android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/postAddress"
@@ -106,12 +106,33 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="15sp"
-        android:hint="선택해주세요"
+        android:hint="50000"
         android:layout_marginEnd="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="@+id/postPrice"
         app:layout_constraintTop_toTopOf="@+id/postPrice"
         app:layout_constraintStart_toEndOf="@+id/postPrice" />
+    <TextView
+        android:id="@+id/postPin"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@id/postPrice"
+        app:layout_constraintTop_toBottomOf="@id/postPrice"
+        android:text="비밀번호"
+        />
+    <EditText
+        android:id="@+id/postEditPin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:hint="1234"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/postPin"
+        app:layout_constraintTop_toTopOf="@+id/postPin"
+        app:layout_constraintStart_toEndOf="@+id/postPin" />
 
     <TextView
         android:id="@+id/postContent"
@@ -119,8 +140,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@id/postPrice"
-        app:layout_constraintTop_toBottomOf="@id/postPrice"
+        app:layout_constraintStart_toStartOf="@id/postPin"
+        app:layout_constraintTop_toBottomOf="@id/postPin"
         android:text="작업내용"
         />
     <EditText

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_add_post"
-        android:name="com.im_geokjeong.ui.PostFragment"
+        android:name="com.im_geokjeong.ui.rentalpost.PostFragment"
         android:label="PostFragment"
         tools:layout="@layout/fragment_post" />
     <fragment
