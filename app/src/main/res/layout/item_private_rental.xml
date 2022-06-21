@@ -32,7 +32,7 @@
                 android:id="@+id/privateRentalListTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
                 android:text="@{person.title}"
                 android:textSize="20sp"
@@ -57,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
                 android:layout_marginBottom="10dp"
-                android:text="@{person.region}"
+                priceAmount="@{person.price}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@id/privateRentalListAddress"
                 app:layout_constraintTop_toBottomOf="@+id/privateRentalListAddress" />

@@ -13,6 +13,7 @@
     <string name="persondetail_phonenumber">전화번호 : %s</string>
     <string name="persondetail_price">가격 : %d</string>
     <string name="persondetail_proof">자격 필요여부 : </string>
+    <string name="unit_discount_currency">%s원</string>
 
 
 </resources>
