@@ -5,11 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.im_geokjeong.model.Person
+import com.im_geokjeong.repository.rentalperson.ArticleRepository
 import com.im_geokjeong.repository.rentalperson.PersonRepository
 import com.im_geokjeong.ui.common.Event
 import kotlinx.coroutines.launch
 
-class RentalPersonViewModel(private val personRepository: PersonRepository) : ViewModel() {
+class RentalPersonViewModel(private val personRepository: PersonRepository, private val articleRepository: ArticleRepository) : ViewModel() {
 
     private val _items = MutableLiveData<List<Person>>()
     val items: LiveData<List<Person>> = _items
@@ -30,6 +31,16 @@ class RentalPersonViewModel(private val personRepository: PersonRepository) : Vi
             val rentalPerson = personRepository.getArticle()
 
             rentalPerson.let {
+                _items.value = it.data
+            }
+        }
+    }
+
+    fun loadArticleData(title: String){
+        viewModelScope.launch {
+            val article = articleRepository.getArticleByTitle(title)
+
+            article.let{
                 _items.value = it.data
             }
         }

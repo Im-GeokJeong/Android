@@ -42,7 +42,6 @@ class OfficeDetailFragment: Fragment() {
         viewModel.office.observe(viewLifecycleOwner){ office ->
             binding.office = office.data
             officeDetailAdapter.submitList(office.data.machines)
-
         }
     }
 }
