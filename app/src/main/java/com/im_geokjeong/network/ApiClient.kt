@@ -27,6 +27,9 @@ interface ApiClient {
     @GET("office/{officeId}")
     suspend fun getOfficeDetail(@Path("officeId") officeId: Int): OfficeDetailResponse
 
+    @GET("post/title/{title}")
+    suspend fun getArticleByTitle(@Path("title") title: String): PersonResponse
+
     companion object {
         private const val baseUrl = BASE_URL
 

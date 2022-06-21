@@ -4,60 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="person"
             type="com.im_geokjeong.model.Person" />
+
         <variable
             name="viewModel"
             type="com.im_geokjeong.ui.rentalperson.RentalPersonViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.openPersonDetail(person)}">
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp">
 
-        <ImageView
-            android:id="@+id/privateRentalListImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/goolsakgi"
-            app:layout_constraintEnd_toStartOf="@+id/privateRentalListTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="@string/private_rental_image_description" />
-
-        <TextView
-            android:id="@+id/privateRentalListTitle"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            tools:text="제목 제목 제목"
-            android:text="@{person.title}"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/privateRentalListAddress"
-            app:layout_constraintStart_toEndOf="@id/privateRentalListImage"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:onClick="@{() -> viewModel.openPersonDetail(person)}">
 
-        <TextView
-            android:id="@+id/privateRentalListAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="@{person.region}"
-            app:layout_constraintStart_toStartOf="@id/privateRentalListTitle"
-            app:layout_constraintTop_toBottomOf="@+id/privateRentalListTitle" />
+            <TextView
+                android:id="@+id/privateRentalListTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="10dp"
+                android:text="@{person.title}"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/privateRentalListAddress"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="제목 제목 제목" />
 
-        <TextView
-            android:id="@+id/privateRentalListTime"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="1분전"
-            app:layout_constraintBottom_toBottomOf="@id/privateRentalListTitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/privateRentalListAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@{person.region}"
+                app:layout_constraintStart_toStartOf="@id/privateRentalListTitle"
+                app:layout_constraintTop_toBottomOf="@+id/privateRentalListTitle" />
 
+            <TextView
+                android:id="@+id/privateRentalPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"
+                android:text="@{person.region}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/privateRentalListAddress"
+                app:layout_constraintTop_toBottomOf="@+id/privateRentalListAddress" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
 </layout>

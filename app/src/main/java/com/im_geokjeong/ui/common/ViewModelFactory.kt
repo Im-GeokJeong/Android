@@ -10,6 +10,8 @@ import com.im_geokjeong.repository.officedetail.OfficeDetailRemoteDataSource
 import com.im_geokjeong.repository.officedetail.OfficeDetailRepository
 import com.im_geokjeong.repository.persondetail.PersonDetailRemoteDataSource
 import com.im_geokjeong.repository.persondetail.PersonDetailRepository
+import com.im_geokjeong.repository.rentalperson.ArticleRemoteDataSource
+import com.im_geokjeong.repository.rentalperson.ArticleRepository
 import com.im_geokjeong.repository.rentalperson.PersonRemoteDataSource
 import com.im_geokjeong.repository.rentalperson.PersonRepository
 import com.im_geokjeong.repository.rentalpost.RentalPostRemoteDataSource
@@ -34,7 +36,8 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
             }
             modelClass.isAssignableFrom(RentalPersonViewModel::class.java) -> {
                 val repository = PersonRepository(PersonRemoteDataSource(ApiClient.create()))
-                RentalPersonViewModel(repository) as T
+                val articleRepository = ArticleRepository(ArticleRemoteDataSource(ApiClient.create()))
+                RentalPersonViewModel(repository, articleRepository) as T
             }
             modelClass.isAssignableFrom(OfficeViewModel::class.java) -> {
                 val repository = OfficeRepository(OfficeRemoteDataSource(ApiClient.create()))
