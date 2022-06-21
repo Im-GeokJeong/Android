@@ -6,6 +6,7 @@ import android.view.KeyEvent.KEYCODE_ENTER
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -36,11 +37,10 @@ class RentalPersonFragment : Fragment() {
             openPersonDetail(it.id, it.title)
         })
 
-        privateRentalSearch.setOnKeyListener { v, keyCode, event ->
-            if (event.action == KeyEvent.ACTION_DOWN && keyCode == KEYCODE_ENTER) {
+        privateRentalSearch.setOnEditorActionListener() { v, keyCode, event ->
+            if (keyCode == EditorInfo.IME_ACTION_SEARCH) {
                 // 엔터 눌렀을때 행동
                 setArticleAdapter(privateRentalSearch.text.toString())
-                privateRentalSearch.text = null
             }
             true
         }
