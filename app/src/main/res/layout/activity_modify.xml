@@ -66,19 +66,6 @@
         app:layout_constraintTop_toTopOf="@+id/postPrice" />
 
     <EditText
-        android:id="@+id/postEditPin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="15dp"
-        android:hint="1234"
-        android:inputType="numberPassword"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/postPin"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/postPin"
-        app:layout_constraintTop_toTopOf="@+id/postPin" />
-
-    <EditText
         android:id="@+id/postEditContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -158,24 +145,14 @@
         app:layout_constraintTop_toBottomOf="@id/postAddress" />
 
     <TextView
-        android:id="@+id/postPin"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="비밀번호"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@id/postPrice"
-        app:layout_constraintTop_toBottomOf="@id/postPrice" />
-
-    <TextView
         android:id="@+id/postContent"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="작업내용"
         android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@id/postPin"
-        app:layout_constraintTop_toBottomOf="@id/postPin" />
+        app:layout_constraintStart_toStartOf="@id/postPrice"
+        app:layout_constraintTop_toBottomOf="@id/postPrice" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/postToolbar"
@@ -183,6 +160,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="글 등록" />
+        app:title="글 수정" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

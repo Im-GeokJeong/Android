@@ -3,12 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-        <variable
-            name="personDetail"
-            type="com.im_geokjeong.model.Person" />
-    </data>
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,23 +23,23 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="@{personDetail.title}"
-                    tools:text="제목제목제목"
                     android:textSize="25sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="제목제목제목" />
 
                 <TextView
                     android:id="@+id/privateRentalDetailAddress"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:text="@{@string/persondetail_title(personDetail.title)}"
-                    tools:text="장소:경주시"
+                    android:text="@{@string/persondetail_title(personDetail.region)}"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/viewDividerTitle" />
+                    app:layout_constraintTop_toBottomOf="@id/viewDividerTitle"
+                    tools:text="장소:경주시" />
 
                 <TextView
                     android:id="@+id/privateRentalDetailPhone"
@@ -53,11 +47,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="@{@string/persondetail_phonenumber(personDetail.phoneNumber)}"
-                    tools:text="휴대폰 번호"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/privateRentalDetailAddress" />
+                    app:layout_constraintTop_toBottomOf="@id/privateRentalDetailAddress"
+                    tools:text="휴대폰 번호" />
 
                 <TextView
                     android:id="@+id/privateRentalDetailPrice"
@@ -65,22 +59,22 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="@{@string/persondetail_price(personDetail.price)}"
-                    tools:text="가격 : 159999원"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/privateRentalDetailPhone" />
+                    app:layout_constraintTop_toBottomOf="@id/privateRentalDetailPhone"
+                    tools:text="가격 : 159999원" />
 
                 <TextView
                     android:id="@+id/privateRentalDetailProof"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    tools:text="자격 필요여부 : Y"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/privateRentalDetailPrice" />
+                    app:layout_constraintTop_toBottomOf="@id/privateRentalDetailPrice"
+                    tools:text="자격 필요여부 : Y" />
 
                 <TextView
                     android:id="@+id/privateRentalDetailContent"
@@ -88,11 +82,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:text="@{personDetail.content}"
-                    tools:text="구굴기(보행관리기)\n구굴기\nDR-30\n전규격a\n임대일 수 : 2일 가능합니다.\n전화번호 000-0000-0000"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/viewDividerContent" />
+                    app:layout_constraintTop_toBottomOf="@id/viewDividerContent"
+                    tools:text="구굴기(보행관리기)\n구굴기\nDR-30\n전규격a\n임대일 수 : 2일 가능합니다.\n전화번호 000-0000-0000" />
 
                 <View
                     android:id="@+id/viewDividerContent"
@@ -124,8 +118,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|enterAlways"
-                app:navigationIcon="@drawable/ic_gnb_back" />
+                app:menu="@menu/top_app_bar" />
         </com.google.android.material.appbar.AppBarLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <data>
+
+        <variable
+            name="personDetail"
+            type="com.im_geokjeong.model.Person" />
+    </data>
 </layout>
