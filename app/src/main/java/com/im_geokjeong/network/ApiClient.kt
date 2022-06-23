@@ -6,10 +6,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ApiClient {
     @GET("office/list")
@@ -29,6 +26,15 @@ interface ApiClient {
 
     @GET("post/title/{title}")
     suspend fun getArticleByTitle(@Path("title") title: String): PersonResponse
+
+    @POST("post/auth")
+    suspend fun getAuth(@Body modify: ModifyPerson): PostResponse
+
+    @DELETE("post/{postId}")
+    suspend fun deleteArticle(@Path("postId") postId: Int): PostResponse
+
+    @PUT("post")
+    suspend fun updateArticle(@Body person: Person): PostResponse
 
     companion object {
         private const val baseUrl = BASE_URL
