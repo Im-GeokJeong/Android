@@ -39,7 +39,6 @@ class RentalPersonFragment : Fragment() {
 
         privateRentalSearch.setOnEditorActionListener() { v, keyCode, event ->
             if (keyCode == EditorInfo.IME_ACTION_SEARCH) {
-                // 엔터 눌렀을때 행동
                 setArticleAdapter(privateRentalSearch.text.toString())
             }
             true
