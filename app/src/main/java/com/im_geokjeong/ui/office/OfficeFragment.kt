@@ -4,7 +4,6 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
@@ -102,7 +101,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             openOfficeDetail(it.id, it.name)
         })
 
-        val btnFindLocation = view.findViewById<ImageButton>(R.id.btn_find_location)
+        val btnFindLocation = view.findViewById<ImageButton>(R.id.btnFindLocation)
         btnFindLocation.setOnClickListener {
             findLocation()
         }
@@ -268,7 +267,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
 
     class CustomBalloonAdapter(inflater: LayoutInflater) : CalloutBalloonAdapter {
         private val mCalloutBalloon: View = inflater.inflate(R.layout.item_balloon, null)
-        val name: TextView = mCalloutBalloon.findViewById(id.ball_tv_name)
+        val name: TextView = mCalloutBalloon.findViewById(id.ballTvName)
 
         override fun getCalloutBalloon(poiItem: MapPOIItem?): View {
             // 마커 클릭 시 나오는 말풍선

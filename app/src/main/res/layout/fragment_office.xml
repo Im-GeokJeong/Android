@@ -11,12 +11,12 @@
         android:layout_height="match_parent">
 
         <net.daum.mf.map.api.MapView
-            android:id="@+id/mv_rental_office"
+            android:id="@+id/mvRentalOffice"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
         <ImageButton
-            android:id="@+id/btn_find_location"
+            android:id="@+id/btnFindLocation"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="50dp"
