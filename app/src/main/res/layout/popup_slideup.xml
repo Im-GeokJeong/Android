@@ -19,7 +19,7 @@
         android:background="@color/white">
         <!-- Header -->
         <TextView
-            android:id="@+id/tv_popup_office_name"
+            android:id="@+id/tvPopupOfficeName"
             style="@style/TextHeadline20.Bold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -27,20 +27,20 @@
             android:layout_marginTop="18dp"
             android:layout_marginBottom="10dp"
             android:text="@{office.name}"
-            app:layout_constraintBottom_toTopOf="@id/tv_popup_road_name_address"
+            app:layout_constraintBottom_toTopOf="@id/tvPopupRoadAddress"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="경북 대여소1" />
 
         <ImageView
-            android:id="@+id/iv_popup_address"
+            android:id="@+id/ivPopupAddress"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginTop="7dp"
             android:background="@drawable/ic_location_on_black_24dp"
             android:backgroundTint="@color/green_main"
-            app:layout_constraintStart_toStartOf="@id/tv_popup_office_name"
-            app:layout_constraintTop_toTopOf="@id/tv_popup_road_name_address" />
+            app:layout_constraintStart_toStartOf="@id/tvPopupOfficeName"
+            app:layout_constraintTop_toTopOf="@id/tvPopupRoadAddress" />
 
         <TextView
             android:id="@+id/btn_popup_detail"
@@ -51,28 +51,28 @@
             android:text="@string/mapDetail"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tv_popup_office_name" />
+            app:layout_constraintTop_toTopOf="@id/tvPopupOfficeName" />
 
         <TextView
-            android:id="@+id/tv_popup_road_name_address"
+            android:id="@+id/tvPopupRoadAddress"
             style="@style/TextHeadline14"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:text="@{office.streetNameAddress}"
-            app:layout_constraintBottom_toTopOf="@+id/tv_popup_lot_number_address"
-            app:layout_constraintStart_toEndOf="@+id/iv_popup_address"
+            app:layout_constraintBottom_toTopOf="@+id/tvPopupLotNumAddress"
+            app:layout_constraintStart_toEndOf="@+id/ivPopupAddress"
             tools:text="교학로 11길 46" />
 
 
         <TextView
-            android:id="@+id/tv_popup_lot_number_address"
+            android:id="@+id/tvPopupLotNumAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="@{office.lotNumberAddress}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tv_popup_road_name_address"
+            app:layout_constraintStart_toStartOf="@id/tvPopupRoadAddress"
             tools:text="지번 : 교학로 11길 46" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

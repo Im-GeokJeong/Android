@@ -15,7 +15,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/iv_map_detail"
+            android:id="@+id/ivOfficeDetail"
             imageUrl="@{machine.picture}"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -27,27 +27,27 @@
             tools:background="@drawable/goolsakgi" />
 
         <TextView
-            android:id="@+id/tv_map_detail_machine_name"
+            android:id="@+id/tvOfficeDetailMachineName"
             style="@style/TextMedium16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:text="@{machine.name}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/iv_map_detail"
+            app:layout_constraintStart_toEndOf="@+id/ivOfficeDetail"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="소똥치우는기계"
             tools:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tv_map_detail_machine_count"
+            android:id="@+id/tvOfficeDetailMachineCount"
             style="@style/TextMedium16"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:text="@{String.valueOf(machine.count)}"
-            app:layout_constraintStart_toStartOf="@+id/tv_map_detail_machine_name"
-            app:layout_constraintTop_toBottomOf="@+id/tv_map_detail_machine_name"
+            app:layout_constraintStart_toStartOf="@+id/tvOfficeDetailMachineName"
+            app:layout_constraintTop_toBottomOf="@+id/tvOfficeDetailMachineName"
             tools:text="3"
             tools:textSize="18sp" />
 
@@ -57,8 +57,8 @@
             android:layout_marginStart="6dp"
             android:layout_marginTop="6dp"
             android:text="대 보유중"
-            app:layout_constraintBottom_toBottomOf="@+id/tv_map_detail_machine_count"
-            app:layout_constraintStart_toEndOf="@+id/tv_map_detail_machine_count"
+            app:layout_constraintBottom_toBottomOf="@+id/tvOfficeDetailMachineCount"
+            app:layout_constraintStart_toEndOf="@+id/tvOfficeDetailMachineCount"
             tools:textSize="18sp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -30,7 +30,7 @@ open class SlideUpDialog(context: Context, builder: Builder) : Dialog(
         window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         backgroundView = findViewById<View>(R.id.background)
         backgroundView?.alpha = 0f
-        containerView = findViewById<CardView>(R.id.content_container)
+        containerView = findViewById<CardView>(R.id.contentContainer)
         val screenHeight = context.resources.displayMetrics.heightPixels.toFloat()
         orgY = containerView!!.y
         containerView?.y = screenHeight
