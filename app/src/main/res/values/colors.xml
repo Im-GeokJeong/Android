@@ -10,6 +10,6 @@
     <color name="green_base">#72cc82</color>
     <color name="green_main">#3cb371</color>
     <color name="green_accent">#109972</color>
-
+    <color name="phone_number">#2196F3</color>
     <color name="gradient">@color/gradient_color</color>
 </resources>
