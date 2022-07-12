@@ -1,5 +1,7 @@
 package com.im_geokjeong.ui.officedetail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -33,6 +35,13 @@ class OfficeDetailFragment: Fragment() {
             setLayout(officeId)
         }
 
+        binding.tvToolbarOfficePhone.setOnClickListener{
+            var intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:"+binding.office?.phoneNumber)
+            if (intent.resolveActivity(requireActivity().packageManager) != null) {
+                startActivity(intent)
+            }
+        }
     }
 
     private fun setLayout(officeId: Int) {

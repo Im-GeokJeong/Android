@@ -16,14 +16,22 @@
             android:layout_height="match_parent" />
 
         <ImageButton
+            android:id="@+id/btnFarmer"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/farmer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageButton
             android:id="@+id/btnFindLocation"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="50dp"
-            android:layout_margin="20dp"
             android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/search_location_btn"
             android:src="@drawable/ic_my_location_black_24dp"
-            android:background="@drawable/search_location_btn" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
