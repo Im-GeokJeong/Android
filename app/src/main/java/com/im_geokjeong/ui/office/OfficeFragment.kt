@@ -111,7 +111,6 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             val dialog = LayoutInflater.from(requireContext()).inflate(R.layout.crop_search_dialog, null)
             val builder = AlertDialog.Builder(requireContext())
                 .setView(dialog)
-                .setTitle("농작물을 검색해주세요")
 
             builder.show().window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         }

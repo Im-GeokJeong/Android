@@ -12,6 +12,12 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="@drawable/search_edge"
+        android:drawableStart="@drawable/ic_search_black_24dp"
+        android:drawablePadding="10dp"
+        android:hint="@string/crop_search_hint"
+        android:imeOptions="actionSearch"
+        android:maxLines="1"
+        android:paddingStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

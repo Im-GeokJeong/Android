@@ -5,7 +5,7 @@
     <string name="label_rental_shop">사업소 임대</string>
     <string name="label_personal_shop">개인 임대</string>
     <string name="label_add_post">임대글 작성</string>
-    <string name="private_rental_search_hint">검색어 입력</string>
+    <string name="private_rental_search_hint">글을 검색하세요</string>
     <string name="private_rental_image_description">개인 임대 이미지</string>
 
 
@@ -14,6 +14,7 @@
     <string name="persondetail_price">가격 : %d</string>
     <string name="persondetail_proof">자격 필요여부 : </string>
     <string name="unit_discount_currency">%s원</string>
+    <string name="crop_search_hint">농작물을 검색하세요</string>
 
 
 </resources>

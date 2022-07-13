@@ -7,5 +7,8 @@ class ArticleRemoteDataSource(private val api: ApiClient): ArticleDataSource {
     override suspend fun getArticleByTitle(title: String): PersonResponse {
         return api.getArticleByTitle(title)
     }
+    override suspend fun getArticle(): PersonResponse {
+        return api.getArticle()
+    }
 
 }

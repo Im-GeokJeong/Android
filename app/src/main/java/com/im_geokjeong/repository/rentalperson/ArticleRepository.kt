@@ -6,4 +6,8 @@ class ArticleRepository(private val remoteDataSource: ArticleRemoteDataSource){
     suspend fun getArticleByTitle(title: String): PersonResponse{
         return remoteDataSource.getArticleByTitle(title)
     }
+
+    suspend fun getArticle():PersonResponse{
+        return remoteDataSource.getArticle()
+    }
 }
