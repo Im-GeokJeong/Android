@@ -13,6 +13,14 @@ import com.im_geokjeong.ui.MainActivity
 import com.im_geokjeong.ui.common.ViewModelFactory
 import com.im_geokjeong.ui.rentalpersondetail.RentalPersonDetailFragment
 import kotlinx.android.synthetic.main.activity_modify.*
+import kotlinx.android.synthetic.main.activity_modify.postComplete
+import kotlinx.android.synthetic.main.activity_modify.postEditArea
+import kotlinx.android.synthetic.main.activity_modify.postEditContent
+import kotlinx.android.synthetic.main.activity_modify.postEditPhone
+import kotlinx.android.synthetic.main.activity_modify.postEditPrice
+import kotlinx.android.synthetic.main.activity_modify.postEditProof
+import kotlinx.android.synthetic.main.activity_modify.postEditTitle
+import kotlinx.android.synthetic.main.fragment_post.*
 import kotlinx.coroutines.launch
 
 class ModifyActivity : AppCompatActivity(), RentalPersonDetailFragment.OnDataPassListener {
@@ -36,7 +44,7 @@ class ModifyActivity : AppCompatActivity(), RentalPersonDetailFragment.OnDataPas
         viewModel.loadPersonDetail(postId)
         viewModel.items.observe(this) {
             postEditTitle.setText(it.title)
-            postEditArea.setText(it.region)
+            postEditArea.text=it.region
             postEditContent.setText(it.content)
             postEditPhone.setText(it.phoneNumber)
             postEditPrice.setText(it.price.toString())
@@ -47,9 +55,6 @@ class ModifyActivity : AppCompatActivity(), RentalPersonDetailFragment.OnDataPas
                     R.color.black
                 )
             )
-        }
-        postEditProof.setOnClickListener {
-            postClicked()
         }
         postComplete.setOnClickListener {
             person = Person(
@@ -68,14 +73,29 @@ class ModifyActivity : AppCompatActivity(), RentalPersonDetailFragment.OnDataPas
             startActivity(intent)
             finish()
         }
+        postEditProof.setOnClickListener {
+            postProofClicked()
+        }
+        postEditArea.setOnClickListener {
+            postAreaClicked()
+        }
 
     }
 
-    private fun postClicked() {
+    private fun postProofClicked() {
         val items = arrayOf("Y", "N")
         MaterialAlertDialogBuilder(this)
             .setItems(items) { dialog, which ->
                 postEditProof.text = items[which]
+            }
+            .show()
+    }
+
+    private fun postAreaClicked() {
+        val items = arrayOf("포항시", "상주시", "경주시", "김천시", "안동시", "구미시", "영주시", "영덕군", "청도군", "칠곡군")
+        MaterialAlertDialogBuilder(this)
+            .setItems(items) { dialog, which ->
+                postEditArea.text = items[which]
             }
             .show()
     }
@@ -93,6 +113,5 @@ class ModifyActivity : AppCompatActivity(), RentalPersonDetailFragment.OnDataPas
             else -> "N"
         }
     }
-
 
 }
