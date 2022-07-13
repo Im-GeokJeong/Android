@@ -1,5 +1,7 @@
 package com.im_geokjeong.ui.officedetail
 
+import android.content.Intent
+import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

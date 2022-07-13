@@ -69,8 +69,6 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
         super.onViewCreated(view, savedInstanceState)
         val mapView = binding.mvRentalOffice
 
-
-
         mapView.setCalloutBalloonAdapter(CustomBalloonAdapter(layoutInflater))
 
         viewModel.offices.observe(viewLifecycleOwner) {
