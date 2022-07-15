@@ -37,10 +37,10 @@ class RentalPersonFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setPersonListAdapter()
         viewModel.openPersonEvent.observe(viewLifecycleOwner, EventObserver {
-            openPersonDetail(it.id, it.title)
+            openPersonDetail(it.id)
         })
 
-        addPost.setOnClickListener{
+        addPost.setOnClickListener {
             val intent = Intent(context, PostActivity::class.java)
             startActivity(intent)
         }
@@ -61,20 +61,19 @@ class RentalPersonFragment : Fragment() {
         }
     }
 
-    private fun setArticleAdapter(title: String){
+    private fun setArticleAdapter(title: String) {
         viewModel.loadArticleData(title)
         val personAdapter = RentalPersonAdapter(viewModel)
         binding.rvRentalPerson.adapter = personAdapter
-        viewModel.items.observe(viewLifecycleOwner){
+        viewModel.items.observe(viewLifecycleOwner) {
             personAdapter.submitList(it)
         }
     }
 
-    private fun openPersonDetail(id: Int, title: String) {
+    private fun openPersonDetail(id: Int) {
         findNavController().navigate(
             R.id.action_navigation_rental_person_to_navigation_rental_person_detail, bundleOf(
-                "id" to id,
-                "title" to title
+                "id" to id
             )
         )
     }

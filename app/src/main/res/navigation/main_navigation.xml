@@ -10,6 +10,9 @@
         android:name="com.im_geokjeong.ui.favorite.FavoriteFragment"
         android:label="FavoriteFragment"
         tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_navigation_favorite_to_navigation_rental_person_detail"
+            app:destination="@id/navigation_rental_person_detail" />
     </fragment>
     <fragment
         android:id="@+id/navigation_office"

@@ -12,14 +12,18 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.im_geokjeong.R
 import com.im_geokjeong.databinding.FragmentRentalPersonDetailBinding
+import com.im_geokjeong.model.Favorite
 import com.im_geokjeong.model.ModifyPerson
+import com.im_geokjeong.model.Person
 import com.im_geokjeong.ui.common.ViewModelFactory
 import com.im_geokjeong.ui.modfiy.ModifyActivity
 import kotlinx.android.synthetic.main.fragment_rental_person_detail.*
+import kotlinx.coroutines.launch
 
 class RentalPersonDetailFragment : Fragment() {
 
@@ -30,17 +34,11 @@ class RentalPersonDetailFragment : Fragment() {
     }
     private lateinit var binding: FragmentRentalPersonDetailBinding
     private var personId: Int = 0
+    private lateinit var person: Person
 
     interface OnDataPassListener {
         fun onDataPass(data: Int)
     }
-
-    lateinit var dataPassListener: OnDataPassListener
-
-    /* override fun onAttach(context: Context) {
-         super.onAttach(context)
-         dataPassListener=context as OnDataPassListener
-     }*/
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -64,6 +62,7 @@ class RentalPersonDetailFragment : Fragment() {
                     "N"
                 binding.privateRentalDetailProof.text = "자격필요여부 : $qualification"
                 binding.personDetail = it
+                person = it
             }
         }
 
@@ -136,6 +135,24 @@ class RentalPersonDetailFragment : Fragment() {
                             }
                         }
                         .show()
+                    true
+                }
+                R.id.favorite -> {
+                    lifecycleScope.launch {
+                        viewModel.addFavorite(
+                            Favorite(
+                                id = person.id,
+                                title = person.title,
+                                price = person.price,
+                                region = person.region
+                            )
+                        )
+                    }
+                    Toast.makeText(
+                        requireContext(),
+                        "즐겨찾기에 추가했습니다.",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     true
                 }
                 else -> false

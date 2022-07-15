@@ -1,12 +1,15 @@
 package com.im_geokjeong.ui.rentalpost
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.im_geokjeong.R
+import com.im_geokjeong.model.Favorite
 import com.im_geokjeong.model.PostPerson
+import com.im_geokjeong.ui.MainActivity
 import com.im_geokjeong.ui.common.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_post.*
 import kotlinx.coroutines.launch
@@ -31,6 +34,9 @@ class PostActivity : AppCompatActivity() {
             lifecycleScope.launch {
                 viewModel.uploadPost(person)
             }
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)//다시 시작하게 해보자
+            finish()
             //등록 완료되고 어떻게 할지?
         }
         postEditProof.setOnClickListener {
@@ -39,7 +45,6 @@ class PostActivity : AppCompatActivity() {
         postEditArea.setOnClickListener {
             postAreaClicked()
         }
-
     }
 
     private fun postProofClicked() {
@@ -53,7 +58,7 @@ class PostActivity : AppCompatActivity() {
 
     private fun postAreaClicked() {
         val items = arrayOf("포항시", "상주시", "경주시", "김천시", "안동시", "구미시", "영주시", "영덕군", "청도군", "칠곡군")
-        MaterialAlertDialogBuilder(requireContext())
+        MaterialAlertDialogBuilder(this)
             .setItems(items) { dialog, which ->
                 postEditArea.text = items[which]
             }
