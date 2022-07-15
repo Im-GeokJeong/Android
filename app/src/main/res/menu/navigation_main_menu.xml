@@ -9,7 +9,7 @@
         android:icon="@drawable/selector_rental_person_icon"
         android:title="@string/label_personal_shop" />
     <item
-        android:id="@+id/navigation_add_post"
+        android:id="@+id/navigation_favorite"
         android:icon="@drawable/selector_add_post_icon"
-        android:title="@string/label_add_post" />
+        android:title="@string/label_favorite" />
 </menu>

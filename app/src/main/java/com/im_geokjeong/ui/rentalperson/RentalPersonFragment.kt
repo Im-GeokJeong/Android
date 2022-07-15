@@ -1,5 +1,6 @@
 package com.im_geokjeong.ui.rentalperson
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.KeyEvent.KEYCODE_ENTER
@@ -15,6 +16,8 @@ import com.im_geokjeong.R
 import com.im_geokjeong.databinding.FragmentRentalPersonBinding
 import com.im_geokjeong.ui.common.EventObserver
 import com.im_geokjeong.ui.common.ViewModelFactory
+import com.im_geokjeong.ui.modfiy.ModifyActivity
+import com.im_geokjeong.ui.rentalpost.PostActivity
 import kotlinx.android.synthetic.main.fragment_rental_person.*
 
 class RentalPersonFragment : Fragment() {
@@ -36,6 +39,11 @@ class RentalPersonFragment : Fragment() {
         viewModel.openPersonEvent.observe(viewLifecycleOwner, EventObserver {
             openPersonDetail(it.id, it.title)
         })
+
+        addPost.setOnClickListener{
+            val intent = Intent(context, PostActivity::class.java)
+            startActivity(intent)
+        }
 
         privateRentalSearch.setOnEditorActionListener() { v, keyCode, event ->
             if (keyCode == EditorInfo.IME_ACTION_SEARCH) {

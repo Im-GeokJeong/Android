@@ -5,10 +5,10 @@
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
+/.idea/misc.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-/.idea/misc.xml
 .DS_Store
 /build
 /captures
@@ -49,3 +49,4 @@ google-services.json
 
 # Android Profiling
 *.hprof
+.idea/misc.xml
