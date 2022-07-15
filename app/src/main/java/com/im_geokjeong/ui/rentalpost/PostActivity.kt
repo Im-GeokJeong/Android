@@ -34,16 +34,28 @@ class PostActivity : AppCompatActivity() {
             //등록 완료되고 어떻게 할지?
         }
         postEditProof.setOnClickListener {
-            postClicked()
+            postProofClicked()
+        }
+        postEditArea.setOnClickListener {
+            postAreaClicked()
         }
 
     }
 
-    private fun postClicked() {
+    private fun postProofClicked() {
         val items = arrayOf("Y", "N")
         MaterialAlertDialogBuilder(this)
             .setItems(items) { dialog, which ->
                 postEditProof.text = items[which]
+            }
+            .show()
+    }
+
+    private fun postAreaClicked() {
+        val items = arrayOf("포항시", "상주시", "경주시", "김천시", "안동시", "구미시", "영주시", "영덕군", "청도군", "칠곡군")
+        MaterialAlertDialogBuilder(requireContext())
+            .setItems(items) { dialog, which ->
+                postEditArea.text = items[which]
             }
             .show()
     }
