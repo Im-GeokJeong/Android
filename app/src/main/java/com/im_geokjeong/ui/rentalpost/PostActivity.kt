@@ -1,38 +1,26 @@
 package com.im_geokjeong.ui.rentalpost
 
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.im_geokjeong.R
+import com.im_geokjeong.model.Favorite
 import com.im_geokjeong.model.PostPerson
+import com.im_geokjeong.ui.MainActivity
 import com.im_geokjeong.ui.common.ViewModelFactory
-import kotlinx.android.synthetic.main.fragment_post.*
+import kotlinx.android.synthetic.main.activity_post.*
 import kotlinx.coroutines.launch
 
-class PostFragment : Fragment() {
-
-    private val viewModel: PostViewModel by viewModels { ViewModelFactory(requireContext()) }
+class PostActivity : AppCompatActivity() {
+    private val viewModel: PostViewModel by viewModels { ViewModelFactory(this) }
     private lateinit var person: PostPerson
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_post, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_post)
         postComplete.setOnClickListener {
             person = PostPerson(
                 title = postEditTitle.text.toString(),
@@ -45,8 +33,10 @@ class PostFragment : Fragment() {
             )
             lifecycleScope.launch {
                 viewModel.uploadPost(person)
-                finishPost()
             }
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)//다시 시작하게 해보자
+            finish()
             //등록 완료되고 어떻게 할지?
         }
         postEditProof.setOnClickListener {
@@ -55,12 +45,11 @@ class PostFragment : Fragment() {
         postEditArea.setOnClickListener {
             postAreaClicked()
         }
-
     }
 
     private fun postProofClicked() {
         val items = arrayOf("Y", "N")
-        MaterialAlertDialogBuilder(requireContext())
+        MaterialAlertDialogBuilder(this)
             .setItems(items) { dialog, which ->
                 postEditProof.text = items[which]
             }
@@ -69,7 +58,7 @@ class PostFragment : Fragment() {
 
     private fun postAreaClicked() {
         val items = arrayOf("포항시", "상주시", "경주시", "김천시", "안동시", "구미시", "영주시", "영덕군", "청도군", "칠곡군")
-        MaterialAlertDialogBuilder(requireContext())
+        MaterialAlertDialogBuilder(this)
             .setItems(items) { dialog, which ->
                 postEditArea.text = items[which]
             }
@@ -83,10 +72,4 @@ class PostFragment : Fragment() {
         }
     }
 
-    private fun finishPost() {
-        findNavController().navigate(
-            R.id.action_navigation_add_post_to_navigation_office, bundleOf(
-            )
-        )
-    }
 }

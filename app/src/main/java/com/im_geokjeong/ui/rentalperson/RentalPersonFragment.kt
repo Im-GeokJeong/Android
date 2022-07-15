@@ -1,5 +1,6 @@
 package com.im_geokjeong.ui.rentalperson
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.KeyEvent.KEYCODE_ENTER
@@ -15,6 +16,8 @@ import com.im_geokjeong.R
 import com.im_geokjeong.databinding.FragmentRentalPersonBinding
 import com.im_geokjeong.ui.common.EventObserver
 import com.im_geokjeong.ui.common.ViewModelFactory
+import com.im_geokjeong.ui.modfiy.ModifyActivity
+import com.im_geokjeong.ui.rentalpost.PostActivity
 import kotlinx.android.synthetic.main.fragment_rental_person.*
 
 class RentalPersonFragment : Fragment() {
@@ -34,8 +37,13 @@ class RentalPersonFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setPersonListAdapter()
         viewModel.openPersonEvent.observe(viewLifecycleOwner, EventObserver {
-            openPersonDetail(it.id, it.title)
+            openPersonDetail(it.id)
         })
+
+        addPost.setOnClickListener {
+            val intent = Intent(context, PostActivity::class.java)
+            startActivity(intent)
+        }
 
         privateRentalSearch.setOnEditorActionListener() { v, keyCode, event ->
             if (keyCode == EditorInfo.IME_ACTION_SEARCH) {
@@ -53,20 +61,19 @@ class RentalPersonFragment : Fragment() {
         }
     }
 
-    private fun setArticleAdapter(title: String){
+    private fun setArticleAdapter(title: String) {
         viewModel.loadArticleData(title)
         val personAdapter = RentalPersonAdapter(viewModel)
         binding.rvRentalPerson.adapter = personAdapter
-        viewModel.items.observe(viewLifecycleOwner){
+        viewModel.items.observe(viewLifecycleOwner) {
             personAdapter.submitList(it)
         }
     }
 
-    private fun openPersonDetail(id: Int, title: String) {
+    private fun openPersonDetail(id: Int) {
         findNavController().navigate(
             R.id.action_navigation_rental_person_to_navigation_rental_person_detail, bundleOf(
-                "id" to id,
-                "title" to title
+                "id" to id
             )
         )
     }

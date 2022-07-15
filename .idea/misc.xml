@@ -3,17 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/selector_rental_shop_icon.xml" value="0.2165" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/activity_main.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/activity_modify.xml" value="0.18645833333333334" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/dialog.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_office.xml" value="0.17527173913043478" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_office_detail.xml" value="0.17527173913043478" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_post.xml" value="0.264" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_rental_person.xml" value="0.1421875" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_rental_person_detail.xml" value="0.17527173913043478" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/menu/navigation_main_menu.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/menu/top_app_bar.xml" value="0.25364583333333335" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/activity_main.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/activity_modify.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/crop_search_dialog.xml" value="0.190625" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/dialog.xml" value="0.11979166666666667" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/fragment_office.xml" value="0.16510416666666666" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/fragment_office_detail.xml" value="0.16510416666666666" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/fragment_post.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/fragment_rental_person.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/fragment_rental_person_detail.xml" value="0.16145833333333334" />
+        <entry key="..\:/Users/ONE/Desktop/im/app/src/main/res/layout/popup_slideup.xml" value="0.16510416666666666" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/ic_call_black_24dp.xml" value="0.2855" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/ic_edit_filled_black_24dp.xml" value="0.2855" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/ic_home_filled_black_24dp.xml" value="0.2855" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/drawable/ic_plus.xml" value="0.2855" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/activity_post.xml" value="0.28125" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_favorite.xml" value="0.2703125" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_office.xml" value="0.245018115942029" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_office_detail.xml" value="0.245018115942029" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_post.xml" value="0.245018115942029" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_rental_person.xml" value="0.2" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/fragment_rental_person_detail.xml" value="0.245018115942029" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/item_favorite.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/layout/item_private_rental.xml" value="0.22916666666666666" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/menu/navigation_main_menu.xml" value="0.28125" />
+        <entry key="..\:/Users/leehandsub/AndroidStudioProjects/ImAndroid/app/src/main/res/menu/top_app_bar.xml" value="0.28125" />
         <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/activity_map.xml" value="0.33" />
         <entry key="..\:/Users/unme9/AndroidStudioProjects/ImGeokJeong/app/src/main/res/layout/popup_slideup.xml" value="0.33" />
@@ -37,9 +51,11 @@
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/drawable/selector_rental_shop_icon.xml" value="0.1" />
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/activity_map_detail.xml" value="0.264" />
+        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/dialog.xml" value="0.1" />
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_map_detail.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_office.xml" value="0.1" />
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_office_detail.xml" value="0.18" />
-        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_post.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_post.xml" value="0.1" />
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_office.xml" value="0.33064516129032256" />
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_office_detail.xml" value="0.264" />
         <entry key="..\:/Users/unme9/Desktop/Im/Android/app/src/main/res/layout/fragment_rental_person.xml" value="0.36614583333333334" />

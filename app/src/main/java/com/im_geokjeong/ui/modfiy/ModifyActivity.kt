@@ -20,7 +20,6 @@ import kotlinx.android.synthetic.main.activity_modify.postEditPhone
 import kotlinx.android.synthetic.main.activity_modify.postEditPrice
 import kotlinx.android.synthetic.main.activity_modify.postEditProof
 import kotlinx.android.synthetic.main.activity_modify.postEditTitle
-import kotlinx.android.synthetic.main.fragment_post.*
 import kotlinx.coroutines.launch
 
 class ModifyActivity : AppCompatActivity(), RentalPersonDetailFragment.OnDataPassListener {

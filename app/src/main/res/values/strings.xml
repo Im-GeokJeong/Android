@@ -4,7 +4,7 @@
     <string name="mapDetail">상세보기</string>
     <string name="label_rental_shop">사업소 임대</string>
     <string name="label_personal_shop">개인 임대</string>
-    <string name="label_add_post">임대글 작성</string>
+    <string name="label_favorite">즐겨찾기</string>
     <string name="private_rental_search_hint">글을 검색하세요</string>
     <string name="private_rental_image_description">개인 임대 이미지</string>
 

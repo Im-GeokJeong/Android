@@ -6,13 +6,13 @@
     app:startDestination="@id/navigation_office">
 
     <fragment
-        android:id="@+id/navigation_add_post"
-        android:name="com.im_geokjeong.ui.rentalpost.PostFragment"
-        android:label="PostFragment"
-        tools:layout="@layout/fragment_post">
+        android:id="@+id/navigation_favorite"
+        android:name="com.im_geokjeong.ui.favorite.FavoriteFragment"
+        android:label="FavoriteFragment"
+        tools:layout="@layout/fragment_favorite">
         <action
-            android:id="@+id/action_navigation_add_post_to_navigation_office"
-            app:destination="@id/navigation_office" />
+            android:id="@+id/action_navigation_favorite_to_navigation_rental_person_detail"
+            app:destination="@id/navigation_rental_person_detail" />
     </fragment>
     <fragment
         android:id="@+id/navigation_office"
