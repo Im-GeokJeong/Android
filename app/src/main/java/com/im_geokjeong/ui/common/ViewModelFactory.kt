@@ -5,6 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.im_geokjeong.ServiceLocator
 import com.im_geokjeong.network.ApiClient
+import com.im_geokjeong.repository.machinelist.MachineRemoteDataSource
+import com.im_geokjeong.repository.machinelist.MachineRepository
 import com.im_geokjeong.repository.modify.ModifyRemoteDataSource
 import com.im_geokjeong.repository.modify.ModifyRepository
 import com.im_geokjeong.repository.office.OfficeRemoteDataSource
@@ -24,6 +26,7 @@ import com.im_geokjeong.ui.officedetail.OfficeDetailViewModel
 import com.im_geokjeong.ui.rentalperson.RentalPersonViewModel
 import com.im_geokjeong.ui.rentalpersondetail.RentalPersonDetailViewModel
 import com.im_geokjeong.ui.rentalpost.PostViewModel
+import com.im_geokjeong.ui.searchcrop.MachineListViewModel
 
 class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -54,7 +57,10 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
             modelClass.isAssignableFrom(RentalPersonDetailViewModel::class.java) -> {
                 val repository =
                     PersonDetailRepository(PersonDetailRemoteDataSource(ApiClient.create()))
-                return RentalPersonDetailViewModel(repository,ServiceLocator.provideFavoriteRepository(context)) as T
+                return RentalPersonDetailViewModel(
+                    repository,
+                    ServiceLocator.provideFavoriteRepository(context)
+                ) as T
             }
             modelClass.isAssignableFrom(ModifyViewModel::class.java) -> {
                 val repository =
@@ -63,6 +69,10 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
             }
             modelClass.isAssignableFrom(FavoriteViewModel::class.java) -> {
                 FavoriteViewModel(ServiceLocator.provideFavoriteRepository(context)) as T
+            }
+            modelClass.isAssignableFrom(MachineListViewModel::class.java) -> {
+                val repository = MachineRepository(MachineRemoteDataSource(ApiClient.create()))
+                return MachineListViewModel(repository) as T
             }
             else -> {
                 throw IllegalArgumentException("Failed to create ViewModel: ${modelClass.name}")

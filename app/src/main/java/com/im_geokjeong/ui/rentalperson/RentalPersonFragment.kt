@@ -45,7 +45,7 @@ class RentalPersonFragment : Fragment() {
             startActivity(intent)
         }
 
-        privateRentalSearch.setOnEditorActionListener() { v, keyCode, event ->
+        privateRentalSearch.setOnEditorActionListener { v, keyCode, event ->
             if (keyCode == EditorInfo.IME_ACTION_SEARCH) {
                 setArticleAdapter(privateRentalSearch.text.toString())
             }

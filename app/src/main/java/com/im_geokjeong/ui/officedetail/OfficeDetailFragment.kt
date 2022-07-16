@@ -14,7 +14,7 @@ import com.im_geokjeong.common.KEY_OFFICE_NAME
 import com.im_geokjeong.databinding.FragmentOfficeDetailBinding
 import com.im_geokjeong.ui.common.ViewModelFactory
 
-class OfficeDetailFragment: Fragment() {
+class OfficeDetailFragment : Fragment() {
     private val viewModel: OfficeDetailViewModel by viewModels { ViewModelFactory(requireContext()) }
     private lateinit var binding: FragmentOfficeDetailBinding
     override fun onCreateView(
@@ -31,13 +31,13 @@ class OfficeDetailFragment: Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        requireArguments().getInt(KEY_OFFICE_ID)?.let{ officeId ->
+        requireArguments().getInt(KEY_OFFICE_ID)?.let { officeId ->
             setLayout(officeId)
         }
 
-        binding.tvToolbarOfficePhone.setOnClickListener{
+        binding.tvToolbarOfficePhone.setOnClickListener {
             var intent = Intent(Intent.ACTION_DIAL)
-            intent.data = Uri.parse("tel:"+binding.office?.phoneNumber)
+            intent.data = Uri.parse("tel:" + binding.office?.phoneNumber)
             if (intent.resolveActivity(requireActivity().packageManager) != null) {
                 startActivity(intent)
             }
@@ -48,7 +48,7 @@ class OfficeDetailFragment: Fragment() {
         viewModel.loadOfficeDetail(officeId)
         val officeDetailAdapter = OfficeDetailAdapter()
         binding.rvOfficeDetail.adapter = officeDetailAdapter
-        viewModel.office.observe(viewLifecycleOwner){ office ->
+        viewModel.office.observe(viewLifecycleOwner) { office ->
             binding.office = office.data
             officeDetailAdapter.submitList(office.data.machines)
         }

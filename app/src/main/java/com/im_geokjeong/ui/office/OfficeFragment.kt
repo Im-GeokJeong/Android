@@ -6,8 +6,6 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.location.Location
 import android.location.LocationManager
 import android.net.Uri
@@ -35,7 +33,8 @@ import com.im_geokjeong.databinding.PopupSlideupBinding
 import com.im_geokjeong.model.Office
 import com.im_geokjeong.ui.common.EventObserver
 import com.im_geokjeong.ui.common.ViewModelFactory
-import kotlinx.android.synthetic.main.slide_up_dialog_base.*
+import com.im_geokjeong.ui.searchcrop.SearchCropDialog
+import kotlinx.android.synthetic.main.fragment_office.*
 import net.daum.mf.map.api.CalloutBalloonAdapter
 import net.daum.mf.map.api.MapPOIItem
 import net.daum.mf.map.api.MapPoint
@@ -107,12 +106,9 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             findLocation()
         }
 
-        binding.btnFarmer.setOnClickListener {
-            val dialog = LayoutInflater.from(requireContext()).inflate(R.layout.crop_search_dialog, null)
-            val builder = AlertDialog.Builder(requireContext())
-                .setView(dialog)
-
-            builder.show().window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        btnFarmer.setOnClickListener {
+            val dialog = SearchCropDialog()
+            dialog.show(requireActivity().supportFragmentManager, "SearchCropDialog")
         }
     }
 
