@@ -24,6 +24,9 @@ interface ApiClient {
     @GET("office/{officeId}")
     suspend fun getOfficeDetail(@Path("officeId") officeId: Int): OfficeDetailResponse
 
+    @GET("office/machine/{cropName}")
+    suspend fun getMachineList(@Path("cropName") cropName: String): CropResponse
+
     @GET("post/title/{title}")
     suspend fun getArticleByTitle(@Path("title") title: String): PersonResponse
 
