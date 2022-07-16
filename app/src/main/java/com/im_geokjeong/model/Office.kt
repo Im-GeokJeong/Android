@@ -1,5 +1,8 @@
 package com.im_geokjeong.model
 
+import android.os.Parcel
+import android.os.Parcelable
+
 data class Office(
     val id: Int,
     val name: String,

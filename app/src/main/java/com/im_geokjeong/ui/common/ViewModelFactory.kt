@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.im_geokjeong.ServiceLocator
 import com.im_geokjeong.network.ApiClient
-import com.im_geokjeong.repository.machinelist.MachineRemoteDataSource
-import com.im_geokjeong.repository.machinelist.MachineRepository
+import com.im_geokjeong.repository.searchcrop.SearchCropRemoteDataSource
+import com.im_geokjeong.repository.searchcrop.SearchCropRepository
 import com.im_geokjeong.repository.modify.ModifyRemoteDataSource
 import com.im_geokjeong.repository.modify.ModifyRepository
 import com.im_geokjeong.repository.office.OfficeRemoteDataSource
@@ -71,7 +71,7 @@ class ViewModelFactory(private val context: Context) : ViewModelProvider.Factory
                 FavoriteViewModel(ServiceLocator.provideFavoriteRepository(context)) as T
             }
             modelClass.isAssignableFrom(MachineListViewModel::class.java) -> {
-                val repository = MachineRepository(MachineRemoteDataSource(ApiClient.create()))
+                val repository = SearchCropRepository(SearchCropRemoteDataSource(ApiClient.create()))
                 return MachineListViewModel(repository) as T
             }
             else -> {

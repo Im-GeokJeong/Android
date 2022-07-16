@@ -8,11 +8,15 @@
         <variable
             name="machine"
             type="String" />
+        <variable
+            name="viewModel"
+            type="com.im_geokjeong.ui.searchcrop.MachineListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:onClick="@{()->viewModel.openOfficeList(machine)}">
 
         <TextView
             style="@style/TextHeadline20"

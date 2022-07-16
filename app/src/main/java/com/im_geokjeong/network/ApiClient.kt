@@ -39,6 +39,9 @@ interface ApiClient {
     @PUT("post")
     suspend fun updateArticle(@Body person: Person): PostResponse
 
+    @POST("office/offices")
+    suspend fun postMachine(@Body officeRequest: OfficeRequest): OfficeResponse
+
     companion object {
         private const val baseUrl = BASE_URL
 
