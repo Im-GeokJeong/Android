@@ -34,4 +34,10 @@ class OfficeViewModel(
             _offices.value = offices
         }
     }
+
+    private fun loadOfficeList(){
+        viewModelScope.launch {
+            //val officeList =
+        }
+    }
 }

@@ -9,12 +9,13 @@ import com.im_geokjeong.databinding.ItemMachineListBinding
 import com.im_geokjeong.databinding.ItemOfficeDetailBinding
 import com.im_geokjeong.model.Machine
 
-class MachineAdapter : ListAdapter<String, MachineAdapter.MachineItemViewHolder>(
+class MachineAdapter(private val viewModel: MachineListViewModel) : ListAdapter<String, MachineAdapter.MachineItemViewHolder>(
     MachineDiffCallback()
 ) {
-    class MachineItemViewHolder(private val binding: ItemMachineListBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class MachineItemViewHolder(private val binding: ItemMachineListBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(str: String){
             binding.machine = str
+            binding.viewModel = viewModel
             binding.executePendingBindings()
         }
     }

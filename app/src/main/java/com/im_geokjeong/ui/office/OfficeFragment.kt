@@ -28,6 +28,7 @@ import com.im_geokjeong.R
 import com.im_geokjeong.R.id
 import com.im_geokjeong.common.KEY_OFFICE_ID
 import com.im_geokjeong.common.KEY_OFFICE_NAME
+import com.im_geokjeong.common.MyLocationManager
 import com.im_geokjeong.databinding.FragmentOfficeBinding
 import com.im_geokjeong.databinding.PopupSlideupBinding
 import com.im_geokjeong.model.Office
@@ -63,7 +64,12 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             Toast.makeText(requireContext(), "GPS를 켜주세요", Toast.LENGTH_SHORT).show()
         }
 
+        /*val officeList = arguments?.getCharSequenceArrayList("officeList")
+        println(officeList)
 
+        if (officeList != null) {
+            setAdapter()
+        }*/
         return binding.root
     }
 
@@ -169,17 +175,21 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
         }
     }
 
+    lateinit var lm : LocationManager
     // GPS가 켜져있는지 확인
     private fun checkLocationService(): Boolean {
-        val locationManager =  requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+        lm = MyLocationManager.getLocationManager(requireContext())
+        //val locationManager =  requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        return lm.isProviderEnabled(LocationManager.GPS_PROVIDER)
     }
 
     // 현재 사용자 위치
     @SuppressLint("MissingPermission")
     private fun findLocation() {
-        val lm: LocationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        val userNowLocation: Location? = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
+
+        val userNowLocation = MyLocationManager.getLocation(lm)
+        //val lm: LocationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        //val userNowLocation: Location? = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
 
         val uLatitude = userNowLocation?.latitude
         val uLongitude = userNowLocation?.longitude
@@ -197,7 +207,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
         binding.mvRentalOffice.addPOIItem(marker)
     }
 
-    private fun openOfficeDetail(rentalOfficeId: Int, rentalOfficeName: String) {
+    private fun openOfficeDetail(rentalOfficeId: Long, rentalOfficeName: String) {
         slideupPopup.dismissAnim()
 
         findNavController().navigate(
@@ -284,5 +294,12 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             // 말풍선 클릭 시
             return mCalloutBalloon
         }
+    }
+
+    private fun setAdapter(){
+        val officeAdapter = OfficeAdapter()
+
+        binding.rvOfficeList.adapter = officeAdapter
+        officeAdapter.submitList(officeList)
     }
 }

@@ -1,5 +1,6 @@
 package com.im_geokjeong.repository.searchcrop
 
+import android.util.Log
 import com.im_geokjeong.model.CropResponse
 import com.im_geokjeong.model.OfficeRequest
 import com.im_geokjeong.model.OfficeResponse

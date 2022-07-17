@@ -1,8 +1,5 @@
 package com.im_geokjeong.model
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
-
 data class OfficeResponse(
     val status: Int,
     val message: String?,

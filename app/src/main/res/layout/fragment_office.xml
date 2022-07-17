@@ -16,6 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvOfficeList"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/popup_slideup" />
+
         <ImageButton
             android:id="@+id/btnFarmer"
             android:layout_width="80dp"
@@ -33,7 +43,6 @@
             android:src="@drawable/ic_my_location_black_24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

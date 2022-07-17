@@ -1,7 +1,5 @@
 package com.im_geokjeong.ui.officedetail
 
-import android.content.Intent
-import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -15,7 +13,7 @@ class OfficeDetailViewModel(private val officeDetailRepository: OfficeDetailRepo
     private val _office = MutableLiveData<OfficeDetailResponse>()
     val office: LiveData<OfficeDetailResponse> = _office
 
-    fun loadOfficeDetail(officeId: Int){
+    fun loadOfficeDetail(officeId: Long){
         viewModelScope.launch {
             val officeDetail = officeDetailRepository.getOfficeDetail(officeId)
             _office.value = officeDetail
