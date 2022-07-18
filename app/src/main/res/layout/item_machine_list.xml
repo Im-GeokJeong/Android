@@ -10,7 +10,7 @@
             type="String" />
         <variable
             name="viewModel"
-            type="com.im_geokjeong.ui.searchcrop.MachineListViewModel" />
+            type="com.im_geokjeong.ui.searchcrop.SearchCropViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

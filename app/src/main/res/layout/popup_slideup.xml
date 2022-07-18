@@ -19,7 +19,7 @@
         android:background="@color/white">
         <!-- Header -->
         <TextView
-            android:id="@+id/tvPopupOfficeName"
+            android:id="@+id/tvOfficeName"
             style="@style/TextHeadline20.Bold"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:layout_marginTop="7dp"
             android:background="@drawable/ic_location_on_black_24dp"
             android:backgroundTint="@color/green_main"
-            app:layout_constraintStart_toStartOf="@id/tvPopupOfficeName"
+            app:layout_constraintStart_toStartOf="@id/tvOfficeName"
             app:layout_constraintTop_toTopOf="@id/tvPopupRoadAddress" />
 
         <TextView
@@ -51,7 +51,7 @@
             android:text="@string/mapDetail"
             android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvPopupOfficeName" />
+            app:layout_constraintTop_toTopOf="@id/tvOfficeName" />
 
         <TextView
             android:id="@+id/tvPopupRoadAddress"

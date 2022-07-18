@@ -11,6 +11,7 @@ import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,11 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.setFragmentResult
+import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.im_geokjeong.R
 import com.im_geokjeong.R.id
@@ -64,19 +69,15 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             Toast.makeText(requireContext(), "GPS를 켜주세요", Toast.LENGTH_SHORT).show()
         }
 
-        /*val officeList = arguments?.getCharSequenceArrayList("officeList")
-        println(officeList)
-
-        if (officeList != null) {
-            setAdapter()
-        }*/
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val mapView = binding.mvRentalOffice
 
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        val mapView = binding.mvRentalOffice
         mapView.setCalloutBalloonAdapter(CustomBalloonAdapter(layoutInflater))
 
         viewModel.offices.observe(viewLifecycleOwner) {
@@ -107,6 +108,12 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             openOfficeDetail(it.id, it.name)
         })
 
+        NavHostFragment.findNavController(this)
+            .currentBackStackEntry?.savedStateHandle?.getLiveData<String>("machineName")?.observe(viewLifecycleOwner, Observer {
+                viewModel.loadOfficeList(it, findLocation().first, findLocation().second)
+                setAdapter(it)
+            })
+
         val btnFindLocation = view.findViewById<ImageButton>(R.id.btnFindLocation)
         btnFindLocation.setOnClickListener {
             findLocation()
@@ -116,6 +123,28 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             val dialog = SearchCropDialog()
             dialog.show(requireActivity().supportFragmentManager, "SearchCropDialog")
         }
+    }
+
+    private fun setAdapter(machineName: String){
+        viewModel.loadOfficeList(machineName, findLocation().first, findLocation().second)
+
+        val officeAdapter = OfficeAdapter()
+        binding.rvOfficeList.adapter = officeAdapter
+
+        viewModel.officeList.observe(viewLifecycleOwner){
+            officeAdapter.submitList(it)
+        }
+    }
+
+    private fun openOfficeDetail(rentalOfficeId: Long, rentalOfficeName: String) {
+        slideupPopup.dismissAnim()
+
+        findNavController().navigate(
+            R.id.action_office_to_office_detail, bundleOf(
+                KEY_OFFICE_ID to rentalOfficeId,
+                KEY_OFFICE_NAME to rentalOfficeName
+            )
+        )
     }
 
     private fun permissionCheck() {
@@ -176,7 +205,6 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
     }
 
     lateinit var lm : LocationManager
-    // GPS가 켜져있는지 확인
     private fun checkLocationService(): Boolean {
         lm = MyLocationManager.getLocationManager(requireContext())
         //val locationManager =  requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -185,11 +213,9 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
 
     // 현재 사용자 위치
     @SuppressLint("MissingPermission")
-    private fun findLocation() {
+    private fun findLocation(): Pair<String, String> {
 
         val userNowLocation = MyLocationManager.getLocation(lm)
-        //val lm: LocationManager = requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        //val userNowLocation: Location? = lm.getLastKnownLocation(LocationManager.NETWORK_PROVIDER)
 
         val uLatitude = userNowLocation?.latitude
         val uLongitude = userNowLocation?.longitude
@@ -205,17 +231,8 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
 
         binding.mvRentalOffice.setMapCenterPoint(uNowPosition, true)
         binding.mvRentalOffice.addPOIItem(marker)
-    }
 
-    private fun openOfficeDetail(rentalOfficeId: Long, rentalOfficeName: String) {
-        slideupPopup.dismissAnim()
-
-        findNavController().navigate(
-            R.id.action_office_to_office_detail, bundleOf(
-                KEY_OFFICE_ID to rentalOfficeId,
-                KEY_OFFICE_NAME to rentalOfficeName
-            )
-        )
+        return Pair(uLatitude.toString(), uLongitude.toString())
     }
 
     override fun onPOIItemSelected(p0: MapView?, p1: MapPOIItem?) {
@@ -296,10 +313,4 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
         }
     }
 
-    private fun setAdapter(){
-        val officeAdapter = OfficeAdapter()
-
-        binding.rvOfficeList.adapter = officeAdapter
-        officeAdapter.submitList(officeList)
-    }
 }

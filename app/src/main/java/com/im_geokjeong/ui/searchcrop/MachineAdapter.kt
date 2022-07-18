@@ -6,10 +6,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.im_geokjeong.databinding.ItemMachineListBinding
-import com.im_geokjeong.databinding.ItemOfficeDetailBinding
-import com.im_geokjeong.model.Machine
 
-class MachineAdapter(private val viewModel: MachineListViewModel) : ListAdapter<String, MachineAdapter.MachineItemViewHolder>(
+class MachineAdapter(private val viewModel: SearchCropViewModel) : ListAdapter<String, MachineAdapter.MachineItemViewHolder>(
     MachineDiffCallback()
 ) {
     inner class MachineItemViewHolder(private val binding: ItemMachineListBinding) : RecyclerView.ViewHolder(binding.root) {

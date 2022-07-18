@@ -8,17 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
+import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
-import com.im_geokjeong.common.MyLocationManager
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
+import com.im_geokjeong.R
 import com.im_geokjeong.databinding.DialogCropSearchBinding
-import com.im_geokjeong.model.Office
 import com.im_geokjeong.ui.common.EventObserver
 import com.im_geokjeong.ui.common.ViewModelFactory
-import java.util.ArrayList
 
 class SearchCropDialog : DialogFragment() {
-    private val viewModel: MachineListViewModel by viewModels { ViewModelFactory(requireContext()) }
+    private val viewModel: SearchCropViewModel by viewModels { ViewModelFactory(requireContext()) }
     private var _binding: DialogCropSearchBinding? = null
     private val binding get() = _binding!!
 
@@ -41,13 +44,9 @@ class SearchCropDialog : DialogFragment() {
             true
         }
 
-        val lm = MyLocationManager.getLocationManager(requireContext())
-        val nowLocation = MyLocationManager.getLocation(lm)
-        val nowLatitude = nowLocation?.latitude.toString()
-        val nowLongitude = nowLocation?.longitude.toString()
-
         viewModel.openOfficeListEvent.observe(viewLifecycleOwner, EventObserver{
-            openMap(it, nowLatitude, nowLongitude)
+            Log.d("openMap", "{$it}")
+            openMap(it)
         })
 
         return binding.root
@@ -58,24 +57,14 @@ class SearchCropDialog : DialogFragment() {
         _binding = null
     }
 
-    private fun openMap(machine: String, latitude: String, longitude: String){
-        Log.d("openMap", "open clicked")
-        viewModel.loadOfficeList(machine, latitude, longitude)
+    private fun openMap(machine: String) {
 
-        viewModel.officeList.observe(viewLifecycleOwner){
-            Log.d("OfficeList", "$it")
-            val officeArrayList = ArrayList<Office>()
-
-            for(office in it){
-                officeArrayList.add(office)
-            }
-
-            val bundle = Bundle()
-            bundle.putSerializable("officeList", officeArrayList)
-            SearchCropDialog().arguments = bundle
-        }
+        dismiss()
+        NavHostFragment.findNavController(this).currentBackStackEntry?.savedStateHandle?.set(
+            "machineName",
+            machine
+        )
     }
-
     private fun searchCrop(cropName: String) {
         viewModel.loadMachineList(cropName)
         val machineListAdapter = MachineAdapter(viewModel)
