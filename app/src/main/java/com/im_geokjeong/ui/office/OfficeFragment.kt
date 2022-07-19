@@ -264,6 +264,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
 
         } else {
             onSlideUpDialog(p1!!)
+            binding.rvOfficeList.visibility = View.GONE;
         }
     }
 
@@ -272,6 +273,8 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
 
         } else {
             onSlideUpDialog(p1!!)
+            binding.rvOfficeList.visibility = View.GONE;
+
         }
     }
 
@@ -285,6 +288,8 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
 
         } else {
             onSlideUpDialog(poiItem!!)
+            binding.rvOfficeList.visibility = View.GONE;
+
         }
     }
 
@@ -311,6 +316,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
         slideupPopup.setCanceledOnTouchOutside(true)
 
         slideupPopup.show()
+
     }
 
     override fun getCalloutBalloon(p0: MapPOIItem?): View {
