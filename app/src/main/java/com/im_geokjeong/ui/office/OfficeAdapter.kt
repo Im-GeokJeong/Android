@@ -11,7 +11,7 @@ import com.im_geokjeong.databinding.ItemOfficeListBinding
 import com.im_geokjeong.databinding.PopupSlideupBinding
 import com.im_geokjeong.model.Office
 
-class OfficeAdapter : ListAdapter<Office, OfficeAdapter.OfficeItemViewHolder>(
+class OfficeAdapter(private val clickListener: OfficeListener) : ListAdapter<Office, OfficeAdapter.OfficeItemViewHolder>(
     OfficeDiffCallback()
 ) {
     override fun onCreateViewHolder(
@@ -24,13 +24,18 @@ class OfficeAdapter : ListAdapter<Office, OfficeAdapter.OfficeItemViewHolder>(
     }
 
     override fun onBindViewHolder(holder: OfficeItemViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), clickListener)
+    }
+
+    class OfficeListener(val clickListener: (office: Office) -> Unit){
+        fun onClick(office: Office) = clickListener(office)
     }
 
     class OfficeItemViewHolder(private val binding: ItemOfficeListBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(office: Office) {
+        fun bind(office: Office, clickListener: OfficeListener) {
             binding.office = office
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
     }

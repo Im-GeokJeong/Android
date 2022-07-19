@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.core.os.bundleOf
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.setFragmentResult
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
@@ -44,7 +43,7 @@ class SearchCropDialog : DialogFragment() {
             true
         }
 
-        viewModel.openOfficeListEvent.observe(viewLifecycleOwner, EventObserver{
+        viewModel.openOfficeListEvent.observe(viewLifecycleOwner, EventObserver {
             Log.d("openMap", "{$it}")
             openMap(it)
         })
@@ -65,6 +64,7 @@ class SearchCropDialog : DialogFragment() {
             machine
         )
     }
+
     private fun searchCrop(cropName: String) {
         viewModel.loadMachineList(cropName)
         val machineListAdapter = MachineAdapter(viewModel)

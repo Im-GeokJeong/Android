@@ -23,8 +23,6 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.NavHostFragment
@@ -51,7 +49,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
     private val ACCESS_FINE_LOCATION = 1000
     private val viewModel: OfficeViewModel by viewModels { ViewModelFactory(requireContext()) }
     private lateinit var officeList: List<Office>
-    lateinit var slideupPopup : SlideUpDialog
+    lateinit var slideupPopup: SlideUpDialog
     private lateinit var binding: FragmentOfficeBinding
 
     var officeMap = HashMap<String, Office>()
@@ -104,12 +102,13 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             }
         }
 
-        viewModel.openOfficeEvent.observe(viewLifecycleOwner, EventObserver{
+        viewModel.openOfficeEvent.observe(viewLifecycleOwner, EventObserver {
             openOfficeDetail(it.id, it.name)
         })
 
         NavHostFragment.findNavController(this)
-            .currentBackStackEntry?.savedStateHandle?.getLiveData<String>("machineName")?.observe(viewLifecycleOwner, Observer {
+            .currentBackStackEntry?.savedStateHandle?.getLiveData<String>("machineName")
+            ?.observe(viewLifecycleOwner, Observer {
                 viewModel.loadOfficeList(it, findLocation().first, findLocation().second)
                 setAdapter(it)
             })
@@ -123,15 +122,22 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
             val dialog = SearchCropDialog()
             dialog.show(requireActivity().supportFragmentManager, "SearchCropDialog")
         }
+
     }
 
-    private fun setAdapter(machineName: String){
+    private fun setAdapter(machineName: String) {
         viewModel.loadOfficeList(machineName, findLocation().first, findLocation().second)
 
-        val officeAdapter = OfficeAdapter()
+        val officeAdapter = OfficeAdapter(OfficeAdapter.OfficeListener { office ->
+            val officeLatitude = office.latitude?.toDouble()
+            val officeLongitude = office.longitude?.toDouble()
+            val officePosition = MapPoint.mapPointWithGeoCoord(officeLatitude!!, officeLongitude!!)
+
+            binding.mvRentalOffice.setMapCenterPoint(officePosition, true)
+        })
         binding.rvOfficeList.adapter = officeAdapter
 
-        viewModel.officeList.observe(viewLifecycleOwner){
+        viewModel.officeList.observe(viewLifecycleOwner) {
             officeAdapter.submitList(it)
         }
     }
@@ -148,18 +154,27 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
     }
 
     private fun permissionCheck() {
-        val preference =  requireActivity().getPreferences(MODE_PRIVATE)
+        val preference = requireActivity().getPreferences(MODE_PRIVATE)
         val isFirstCheck = preference.getBoolean("isFirstPermissionCheck", true)
-        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
             // 권한이 없는 상태
-            if (ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(),
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(
+                    requireActivity(),
+                    Manifest.permission.ACCESS_FINE_LOCATION
+                )
+            ) {
                 // 권한 거절
                 val builder = AlertDialog.Builder(requireContext())
                 builder.setMessage("현재 위치를 확인하시려면 위치 권한을 허용해주세요.")
                 builder.setPositiveButton("확인") { dialog, which ->
-                    ActivityCompat.requestPermissions(requireActivity(),
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), ACCESS_FINE_LOCATION)
+                    ActivityCompat.requestPermissions(
+                        requireActivity(),
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), ACCESS_FINE_LOCATION
+                    )
                 }
                 builder.setNegativeButton("취소") { dialog, which ->
 
@@ -169,14 +184,19 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
                 if (isFirstCheck) {
                     // 최초 권한 요청
                     preference.edit().putBoolean("isFirstPermissionCheck", false).apply()
-                    ActivityCompat.requestPermissions(requireActivity(),
-                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), ACCESS_FINE_LOCATION)
+                    ActivityCompat.requestPermissions(
+                        requireActivity(),
+                        arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), ACCESS_FINE_LOCATION
+                    )
                 } else {
                     val builder = AlertDialog.Builder(requireContext())
                     builder.setMessage("현재 위치를 확인하시려면 설정에서 위치 권한을 허용해주세요.")
                     builder.setPositiveButton("설정으로 이동") { dialog, which ->
                         val packageName = "com.im_geokjeong"
-                        val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:$packageName"))
+                        val intent = Intent(
+                            Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                            Uri.parse("package:$packageName")
+                        )
                         startActivity(intent)
                     }
                     builder.setNegativeButton("취소") { dialog, which ->
@@ -191,7 +211,11 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
     }
 
     // 권한 요청
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == ACCESS_FINE_LOCATION) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -204,7 +228,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
         }
     }
 
-    lateinit var lm : LocationManager
+    lateinit var lm: LocationManager
     private fun checkLocationService(): Boolean {
         lm = MyLocationManager.getLocationManager(requireContext())
         //val locationManager =  requireContext().getSystemService(Context.LOCATION_SERVICE) as LocationManager
@@ -225,7 +249,7 @@ class OfficeFragment() : Fragment(), MapView.POIItemEventListener, CalloutBalloo
         val marker = MapPOIItem()
         marker.apply {
             itemName = "현 위치"
-            mapPoint =uNowPosition
+            mapPoint = uNowPosition
             markerType = MapPOIItem.MarkerType.RedPin
         }
 

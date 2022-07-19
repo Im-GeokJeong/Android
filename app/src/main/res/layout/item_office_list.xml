@@ -6,8 +6,8 @@
     <data>
 
         <variable
-            name="viewModel"
-            type="com.im_geokjeong.ui.office.OfficeViewModel" />
+            name="clickListener"
+            type="com.im_geokjeong.ui.office.OfficeAdapter.OfficeListener" />
 
         <variable
             name="office"
@@ -17,7 +17,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.movePoint(office.name)}"
+        android:onClick="@{() -> clickListener.onClick(office)}"
         android:background="@color/white">
 
         <TextView
