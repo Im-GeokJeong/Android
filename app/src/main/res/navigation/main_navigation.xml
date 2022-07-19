@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_office_to_office_detail"
             app:destination="@id/navigation_office_detail" />
+        <action
+            android:id="@+id/action_navigation_office_to_searchCropDialog"
+            app:destination="@id/searchCropDialog" />
     </fragment>
     <fragment
         android:id="@+id/navigation_rental_person"
@@ -46,4 +49,13 @@
         android:name="com.im_geokjeong.ui.officedetail.OfficeDetailFragment"
         android:label="RentalShopDetailFragment"
         tools:layout="@layout/fragment_office_detail" />
+    <fragment
+        android:id="@+id/searchCropDialog"
+        tools:layout="@layout/dialog_crop_search"
+        android:name="com.im_geokjeong.ui.searchcrop.SearchCropDialog"
+        android:label="SearchCropDialog" >
+        <action
+            android:id="@+id/action_searchCropDialog_to_navigation_office"
+            app:destination="@id/navigation_office" />
+    </fragment>
 </navigation>

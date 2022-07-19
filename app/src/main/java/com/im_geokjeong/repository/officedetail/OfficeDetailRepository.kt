@@ -4,7 +4,7 @@ import com.im_geokjeong.model.OfficeDetailResponse
 
 class OfficeDetailRepository(private val remoteDataSource: OfficeDetailDataSource) {
 
-    suspend fun getOfficeDetail(officeId: Int): OfficeDetailResponse{
+    suspend fun getOfficeDetail(officeId: Long): OfficeDetailResponse{
         return remoteDataSource.getOfficeDetail(officeId)
     }
 }

@@ -22,7 +22,7 @@ interface ApiClient {
     suspend fun postArticle(@Body person: PostPerson): PostResponse
 
     @GET("office/{officeId}")
-    suspend fun getOfficeDetail(@Path("officeId") officeId: Int): OfficeDetailResponse
+    suspend fun getOfficeDetail(@Path("officeId") officeId: Long): OfficeDetailResponse
 
     @GET("office/machine/{cropName}")
     suspend fun getMachineList(@Path("cropName") cropName: String): CropResponse
@@ -38,6 +38,9 @@ interface ApiClient {
 
     @PUT("post")
     suspend fun updateArticle(@Body person: Person): PostResponse
+
+    @POST("office/offices")
+    suspend fun postMachine(@Body officeRequest: OfficeRequest): OfficeResponse
 
     companion object {
         private const val baseUrl = BASE_URL

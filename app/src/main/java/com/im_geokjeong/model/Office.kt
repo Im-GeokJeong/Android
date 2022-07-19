@@ -1,7 +1,7 @@
 package com.im_geokjeong.model
 
 data class Office(
-    val id: Int,
+    val id: Long,
     val name: String,
     val phoneNumber: String,
     val streetNameAddress: String,

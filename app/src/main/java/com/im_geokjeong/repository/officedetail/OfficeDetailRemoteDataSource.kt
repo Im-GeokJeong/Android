@@ -4,7 +4,7 @@ import com.im_geokjeong.model.OfficeDetailResponse
 import com.im_geokjeong.network.ApiClient
 
 class OfficeDetailRemoteDataSource(private val api: ApiClient): OfficeDetailDataSource {
-    override suspend fun getOfficeDetail(officeId: Int): OfficeDetailResponse {
+    override suspend fun getOfficeDetail(officeId: Long): OfficeDetailResponse {
         return api.getOfficeDetail(officeId)
     }
 

@@ -31,7 +31,7 @@ class OfficeDetailFragment : Fragment() {
 
         binding.lifecycleOwner = viewLifecycleOwner
 
-        requireArguments().getInt(KEY_OFFICE_ID)?.let { officeId ->
+        requireArguments().getLong(KEY_OFFICE_ID)?.let { officeId ->
             setLayout(officeId)
         }
 
@@ -44,7 +44,7 @@ class OfficeDetailFragment : Fragment() {
         }
     }
 
-    private fun setLayout(officeId: Int) {
+    private fun setLayout(officeId: Long) {
         viewModel.loadOfficeDetail(officeId)
         val officeDetailAdapter = OfficeDetailAdapter()
         binding.rvOfficeDetail.adapter = officeDetailAdapter
